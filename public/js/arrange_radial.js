@@ -38,8 +38,8 @@ function arrange(p){ // arrange dots with euclidian spacing
     var dist_degree = radial_dist * x;
     var dist_radian = dist_degree * (Math.PI / 180);
 
-    var coord_x = Math.cos(dist_radian) * rad + rad - 25;
-    var coord_y = Math.sin(dist_radian) * rad + rad - 25;
+    var coord_x = Math.cos(dist_radian) * rad + rad - 15;
+    var coord_y = Math.sin(dist_radian) * rad + rad - 15;
 
     children[x].style.bottom = coord_x+'px';
     children[x].style.right = coord_y+'px';

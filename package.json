@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node index.js"
+    "start": "node index.js"
   },
   "keywords": [
     "midi",
@@ -16,7 +16,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "midi-player-js": "^2.0.5",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "tone": "^13.4.9"
   },
   "devDependencies": {
     "eslint": "^5.13.0"

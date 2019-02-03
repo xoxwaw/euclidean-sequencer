@@ -1,0 +1,15 @@
+body{
+  background-color: darkgray;
+}
+h1{
+  font-size: 40px;
+  font-family: monospace;
+  margin-left: 20px;
+  text-shadow: 2px 2px 4px #555555;
+}
+h2{
+  font-size: 20px;
+  font-family: monospace;
+  margin-left: 20px;
+  text-shadow: 1px 1px 2px #555555;
+}

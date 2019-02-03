@@ -7,20 +7,15 @@ Porter L
     2 / 3 / 19 : Initial commit
 */
 console.log("arrange_radial loaded");
-
 var dot_template1 = document.createElement('div'); // template for dot to populate circles
 dot_template1.setAttribute('class', 'dot');
 dot_template1.setAttribute('id', 'dot1');
-
 var dot_template2 = document.createElement('div'); // template for dot to populate circles
 dot_template2.setAttribute('class', 'dot');
 dot_template2.setAttribute('id', 'dot2');
-
 var dot_template3 = document.createElement('div'); // template for dot to populate circles
 dot_template3.setAttribute('class', 'dot');
 dot_template3.setAttribute('id', 'dot3');
-
-
 
 function populate(n,p,m){ // populate circle with n dots
   var parent = document.getElementById(p);
@@ -36,30 +31,21 @@ function populate(n,p,m){ // populate circle with n dots
     else{
       cln = dot_template3.cloneNode(true);
     }
-
     parent.appendChild(cln);
   }
-  arrange(p);
+  arrange(p); // call to arrange after each time the number of dots changes
 }
 
 function arrange(p){ // arrange dots with euclidian spacing
-
-  // fetch children from container div
   var parent = document.getElementById(p);
   var children = parent.getElementsByTagName('div');
-
   var rad = parent.clientWidth / 2;
-  console.log(rad)
-
   var radial_dist = 360 / children.length;
-
   for (var x = 0; x < children.length; x++){
     var dist_degree = radial_dist * x;
     var dist_radian = dist_degree * (Math.PI / 180);
-
     var coord_x = Math.cos(dist_radian) * rad + rad - 15;
     var coord_y = Math.sin(dist_radian) * rad + rad - 15;
-
     children[x].style.bottom = coord_x+'px';
     children[x].style.right = coord_y+'px';
   }

@@ -13,6 +13,10 @@ h2{
   margin-left: 20px;
   text-shadow: 1px 1px 2px #555555;
 }
+h3{
+  font-size: 15px;
+  font-family: monospace;
+}
 #circle1{
   margin-left: 150px;
   margin-top: 150px;
@@ -40,23 +44,51 @@ h2{
   position: absolute;
   border: 3px dashed white;
 }
-#dot{
-  background-color: rgba(0,0,0,0.5);
+.dot{
+  background-color: rgba(0,0,0,0.2);
   position: absolute;
   width: 30px;
   height: 30px;
   border-radius: 50px;
 }
+#dot1{
+  border: 1px solid red;
+}
+#dot2{
+  border: 1px solid green;
+}
+#dot3{
+  border: 1px solid blue;
+}
 #controls{
   float: right;
   display:inline-block;
-  width: 200px;
-  height: 400px;
-  background-color: rgba(255,255,255,0.5);
-  border: 1px solid white;
+  width: 300px;
+  height: auto;
   padding: 20px;
   margin-right: 50px;
   font-family: monospace;
+}
+#voice1{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+#voice2{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid green;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+#voice3{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid blue;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
 }
 .slider{
   display:block;

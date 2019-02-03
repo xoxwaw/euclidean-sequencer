@@ -8,16 +8,35 @@ Porter L
 */
 console.log("arrange_radial loaded");
 
-var dot_template = document.createElement('div'); // template for dot to populate circles
-dot_template.setAttribute('id', 'dot');
+var dot_template1 = document.createElement('div'); // template for dot to populate circles
+dot_template1.setAttribute('class', 'dot');
+dot_template1.setAttribute('id', 'dot1');
+
+var dot_template2 = document.createElement('div'); // template for dot to populate circles
+dot_template2.setAttribute('class', 'dot');
+dot_template2.setAttribute('id', 'dot2');
+
+var dot_template3 = document.createElement('div'); // template for dot to populate circles
+dot_template3.setAttribute('class', 'dot');
+dot_template3.setAttribute('id', 'dot3');
 
 
 
-function populate(n,p){ // populate circle with n dots
+function populate(n,p,m){ // populate circle with n dots
   var parent = document.getElementById(p);
   parent.innerHTML = '';
   for (var x = 0; x < n; x++){
-    var cln = dot_template.cloneNode(true);
+    var cln;
+    if (m == 1){
+      cln = dot_template1.cloneNode(true);
+    }
+    else if (m == 2){
+      cln = dot_template2.cloneNode(true);
+    }
+    else{
+      cln = dot_template3.cloneNode(true);
+    }
+
     parent.appendChild(cln);
   }
   arrange(p);

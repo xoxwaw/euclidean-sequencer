@@ -11,32 +11,42 @@
       <h2>Ethan Rountree, Phi Nguyen, Porter Libby</h2>
       <div id='vis_container'>
         <div id="circle1">
-          <div id="dot"></div>
+          <div id="dot1" class="dot"></div>
         </div>
 
         <div id="circle2">
-          <div id="dot"></div>
+          <div id="dot2" class="dot"></div>
         </div>
 
         <div id="circle3">
-          <div id="dot"></div>
+          <div id="dot3" class="dot"></div>
         </div>
       </div>
 
       <div id="controls">
-        <label for="dot_num1">Dots 1</label>
-        <input type="range" class="slider" name="dot_num1" min="1" max="16" value="1" step="1"
-          oninput="populate(this.value,'circle1')"
-          onchange="populate(this.value, 'circle1')">
-        <label for="dot_num2">Dots 2</label>
-        <input type="range" class="slider" name="dot_num2" min="1" max="16" value="1" step="1"
-          oninput="populate(this.value,'circle2')"
-          onchange="populate(this.value, 'circle2')">
-        <label for="dot_num3">Dots 3</label>
-        <input type="range" class="slider" name="dot_num3" min="1" max="16" value="1" step="1"
-          oninput="populate(this.value,'circle3')"
-          onchange="populate(this.value, 'circle3')">
+        <div id="voice1">
+          <h3>Voice 1</h3>
+          <label for="dot_num1">Notes per measure</label>
+          <input type="range" class="slider" name="dot_num1" min="1" max="16" value="1" step="1"
+            oninput="populate(this.value,'circle1',1)"
+            onchange="populate(this.value, 'circle1',1)">
+        </div>
 
+        <div id="voice2">
+          <h3>Voice 2</h3>
+          <label for="dot_num2">Notes per measure</label>
+          <input type="range" class="slider" name="dot_num2" min="1" max="16" value="1" step="1"
+            oninput="populate(this.value,'circle2',2)"
+            onchange="populate(this.value, 'circle2',2)">
+        </div>
+
+        <div id="voice3">
+          <h3>Voice 3</h3>
+          <label for="dot_num3">Notes per measure</label>
+          <input type="range" class="slider" name="dot_num3" min="1" max="16" value="1" step="1"
+            oninput="populate(this.value,'circle3',3)"
+            onchange="populate(this.value, 'circle3,3')">
+        </div>
       </div>
 
       <script>

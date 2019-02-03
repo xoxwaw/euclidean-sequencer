@@ -13,24 +13,24 @@ dot_template.setAttribute('id', 'dot');
 
 
 
-function populate(n){ // populate circle with n dots
-  var parent = document.getElementById('circle1');
+function populate(n,p){ // populate circle with n dots
+  var parent = document.getElementById(p);
   parent.innerHTML = '';
   for (var x = 0; x < n; x++){
     var cln = dot_template.cloneNode(true);
     parent.appendChild(cln);
   }
-  arrange();
+  arrange(p);
 }
 
-function arrange(){ // arrange dots with euclidian spacing
+function arrange(p){ // arrange dots with euclidian spacing
 
   // fetch children from container div
-  var parent = document.getElementById('circle1');
+  var parent = document.getElementById(p);
   var children = parent.getElementsByTagName('div');
-  console.log(children);
 
-  var rad = parent.offsetWidth / 2;
+  var rad = parent.clientWidth / 2;
+  console.log(rad)
 
   var radial_dist = 360 / children.length;
 
@@ -38,11 +38,8 @@ function arrange(){ // arrange dots with euclidian spacing
     var dist_degree = radial_dist * x;
     var dist_radian = dist_degree * (Math.PI / 180);
 
-    var coord_x = Math.cos(dist_radian) * 150 + 125;
-    var coord_y = Math.sin(dist_radian) * 150 + 125;
-
-    console.log(coord_x);
-    console.log(coord_y);
+    var coord_x = Math.cos(dist_radian) * rad + rad - 25;
+    var coord_y = Math.sin(dist_radian) * rad + rad - 25;
 
     children[x].style.bottom = coord_x+'px';
     children[x].style.right = coord_y+'px';

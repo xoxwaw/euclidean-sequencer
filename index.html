@@ -13,8 +13,10 @@
       <div id="circle1">
         <div id="dot"></div>
       </div>
-      
-      <input type="range" id="dot_slider" name="dot_num" min="1" max="32" value="1" step="1" oninput="populate(this.value)" onchange="populate(this.value)">
+
+      <input type="range" id="dot_slider" name="dot_num" min="1" max="32" value="1" step="1"
+        oninput="populate(this.value,'circle1')"
+        onchange="populate(this.value, 'circle1')">
       <label for="dot_num">Dots</label>
 
       <script>

@@ -9,18 +9,38 @@
     <body>
       <h1>Euclidian Sequencer</h1>
       <h2>Ethan Rountree, Phi Nguyen, Porter Libby</h2>
+      <div id='vis_container'>
+        <div id="circle1">
+          <div id="dot"></div>
+        </div>
 
-      <div id="circle1">
-        <div id="dot"></div>
+        <div id="circle2">
+          <div id="dot"></div>
+        </div>
+
+        <div id="circle3">
+          <div id="dot"></div>
+        </div>
       </div>
-
-      <input type="range" id="dot_slider" name="dot_num" min="1" max="32" value="1" step="1"
+      <input type="range" id="dot_slider1" name="dot_num1" min="1" max="16" value="1" step="1"
         oninput="populate(this.value,'circle1')"
         onchange="populate(this.value, 'circle1')">
-      <label for="dot_num">Dots</label>
+      <label for="dot_num1">Dots 1</label>
+
+      <input type="range" id="dot_slider2" name="dot_num2" min="1" max="16" value="1" step="1"
+        oninput="populate(this.value,'circle2')"
+        onchange="populate(this.value, 'circle2')">
+      <label for="dot_num2">Dots 2</label>
+
+      <input type="range" id="dot_slider3" name="dot_num3" min="1" max="16" value="1" step="1"
+        oninput="populate(this.value,'circle3')"
+        onchange="populate(this.value, 'circle3')">
+      <label for="dot_num3">Dots 3</label>
 
       <script>
         arrange('circle1');
+        arrange('circle2');
+        arrange('circle3');
       </script>
     </body>
 </html>

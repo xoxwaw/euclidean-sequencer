@@ -14,12 +14,30 @@ h2{
   text-shadow: 1px 1px 2px #555555;
 }
 #circle1{
-  margin-left: 100px;
-  margin-top: 100px;
+  margin-left: 150px;
+  margin-top: 150px;
   width: 300px;
   height: 300px;
   border-radius: 300px;
-  position: relative;
+  position: absolute;
+  border: 3px dashed white;
+}
+#circle2{
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 300px;
+  position: absolute;
+  border: 3px dashed white;
+}
+#circle3{
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border-radius: 300px;
+  position: absolute;
   border: 3px dashed white;
 }
 #dot{
@@ -29,7 +47,11 @@ h2{
   height: 50px;
   border-radius: 50px;
 }
-#dot_slider{
-  margin-top: 50px;
+#dot_slider1{
+  margin-top: 600px;
+  margin-left: 50px;
+}
+#dot_slider2{
+  margin-top: 600px;
   margin-left: 50px;
 }

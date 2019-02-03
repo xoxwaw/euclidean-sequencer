@@ -22,20 +22,22 @@
           <div id="dot"></div>
         </div>
       </div>
-      <input type="range" id="dot_slider1" name="dot_num1" min="1" max="16" value="1" step="1"
-        oninput="populate(this.value,'circle1')"
-        onchange="populate(this.value, 'circle1')">
-      <label for="dot_num1">Dots 1</label>
 
-      <input type="range" id="dot_slider2" name="dot_num2" min="1" max="16" value="1" step="1"
-        oninput="populate(this.value,'circle2')"
-        onchange="populate(this.value, 'circle2')">
-      <label for="dot_num2">Dots 2</label>
+      <div id="controls">
+        <label for="dot_num1">Dots 1</label>
+        <input type="range" class="slider" name="dot_num1" min="1" max="16" value="1" step="1"
+          oninput="populate(this.value,'circle1')"
+          onchange="populate(this.value, 'circle1')">
+        <label for="dot_num2">Dots 2</label>
+        <input type="range" class="slider" name="dot_num2" min="1" max="16" value="1" step="1"
+          oninput="populate(this.value,'circle2')"
+          onchange="populate(this.value, 'circle2')">
+        <label for="dot_num3">Dots 3</label>
+        <input type="range" class="slider" name="dot_num3" min="1" max="16" value="1" step="1"
+          oninput="populate(this.value,'circle3')"
+          onchange="populate(this.value, 'circle3')">
 
-      <input type="range" id="dot_slider3" name="dot_num3" min="1" max="16" value="1" step="1"
-        oninput="populate(this.value,'circle3')"
-        onchange="populate(this.value, 'circle3')">
-      <label for="dot_num3">Dots 3</label>
+      </div>
 
       <script>
         arrange('circle1');

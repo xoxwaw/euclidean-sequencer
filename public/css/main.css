@@ -47,11 +47,19 @@ h2{
   height: 30px;
   border-radius: 50px;
 }
-#dot_slider1{
-  margin-top: 600px;
-  margin-left: 50px;
+#controls{
+  float: right;
+  display:inline-block;
+  width: 200px;
+  height: 400px;
+  background-color: rgba(255,255,255,0.5);
+  border: 1px solid white;
+  padding: 20px;
+  margin-right: 50px;
+  font-family: monospace;
 }
-#dot_slider2{
-  margin-top: 600px;
-  margin-left: 50px;
+.slider{
+  display:block;
+  position: relative;
+  margin-bottom: 40px;
 }

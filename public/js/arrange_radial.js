@@ -4,7 +4,8 @@ Porter L
 
     > Arrange divs in a euclidian circle in parent
 
-    2 / 3 / 19 : Initial commit
+    2 / 3 / 19 : Initial commit + add templates
+    2 / 4 / 19 : Fix null error
 */
 console.log("arrange_radial loaded");
 var dot_template1 = document.createElement('div'); // template for dot to populate circles
@@ -19,21 +20,23 @@ dot_template3.setAttribute('id', 'dot3');
 
 function populate(n,p,m){ // populate circle with n dots
   var parent = document.getElementById(p);
-  parent.innerHTML = '';
-  for (var x = 0; x < n; x++){
-    var cln;
-    if (m == 1){
-      cln = dot_template1.cloneNode(true);
+  if (parent){
+    parent.innerHTML = '';
+    for (var x = 0; x < n; x++){
+      var cln;
+      if (m == 1){
+        cln = dot_template1.cloneNode(true);
+      }
+      else if (m == 2){
+        cln = dot_template2.cloneNode(true);
+      }
+      else{
+        cln = dot_template3.cloneNode(true);
+      }
+      parent.appendChild(cln);
     }
-    else if (m == 2){
-      cln = dot_template2.cloneNode(true);
-    }
-    else{
-      cln = dot_template3.cloneNode(true);
-    }
-    parent.appendChild(cln);
+    arrange(p); // call to arrange after each time the number of dots changes
   }
-  arrange(p); // call to arrange after each time the number of dots changes
 }
 
 function arrange(p){ // arrange dots with euclidian spacing

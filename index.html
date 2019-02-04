@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <title>Euclidian Sequencer</title>
         <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/switches.css" />
         <script type="text/javascript" src="js/arrange_radial.js"></script>
+        <script type="text/javascript" src="js/voice_display.js"></script>
     </head>
     <body>
       <h1>Euclidian Sequencer</h1>
@@ -26,6 +28,14 @@
       <div id="controls">
         <div id="voice1">
           <h3>Voice 1</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="voice1switch"
+              onchange="voiceToggle(this, 'circle1')" checked>
+            <label class="onoffswitch-label" for="voice1switch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
           <label for="dot_num1">Notes per measure</label>
           <input type="range" class="slider" name="dot_num1" min="0" max="16" value="1" step="1"
             oninput="populate(this.value,'circle1',1)"
@@ -34,6 +44,14 @@
 
         <div id="voice2">
           <h3>Voice 2</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="voice2switch"
+              onchange="voiceToggle(this, 'circle2')" checked>
+            <label class="onoffswitch-label" for="voice2switch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
           <label for="dot_num2">Notes per measure</label>
           <input type="range" class="slider" name="dot_num2" min="0" max="16" value="1" step="1"
             oninput="populate(this.value,'circle2',2)"
@@ -42,6 +60,14 @@
 
         <div id="voice3">
           <h3>Voice 3</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="voice3switch"
+              onchange="voiceToggle(this, 'circle3')" checked>
+            <label class="onoffswitch-label" for="voice3switch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
           <label for="dot_num3">Notes per measure</label>
           <input type="range" class="slider" name="dot_num3" min="0" max="16" value="1" step="1"
             oninput="populate(this.value,'circle3',3)"

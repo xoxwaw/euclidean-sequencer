@@ -13,23 +13,85 @@ h2{
   margin-left: 20px;
   text-shadow: 1px 1px 2px #555555;
 }
+h3{
+  font-size: 15px;
+  font-family: monospace;
+}
 #circle1{
-  margin-left: 100px;
-  margin-top: 100px;
+  margin-left: 150px;
+  margin-top: 150px;
   width: 300px;
   height: 300px;
   border-radius: 300px;
-  position: relative;
+  position: absolute;
   border: 3px dashed white;
 }
-#dot{
-  background-color: rgba(0,0,0,0.5);
+#circle2{
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 300px;
   position: absolute;
-  width: 50px;
-  height: 50px;
+  border: 3px dashed white;
+}
+#circle3{
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border-radius: 300px;
+  position: absolute;
+  border: 3px dashed white;
+}
+.dot{
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
 }
-#dot_slider{
-  margin-top: 50px;
-  margin-left: 50px;
+#dot1{
+  border: 1px solid red;
+}
+#dot2{
+  border: 1px solid green;
+}
+#dot3{
+  border: 1px solid blue;
+}
+#controls{
+  float: right;
+  display:inline-block;
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  margin-right: 50px;
+  font-family: monospace;
+}
+#voice1{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+#voice2{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid green;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+#voice3{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid blue;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+.slider{
+  display:block;
+  position: relative;
+  margin-bottom: 40px;
 }

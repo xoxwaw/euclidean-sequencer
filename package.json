@@ -15,8 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "midi-player-js": "^2.0.5",
+    "install": "^0.12.2",
     "nodemon": "^1.18.9",
+    "npm": "^6.7.0",
+    "play": "^0.5.0",
     "tone": "^13.4.9"
   },
   "devDependencies": {

@@ -16,10 +16,9 @@
   "dependencies": {
     "express": "^4.16.4",
     "install": "^0.12.2",
+    "midi": "github:mudcube/MIDI.js",
     "nodemon": "^1.18.9",
-    "npm": "^6.7.0",
-    "play": "^0.5.0",
-    "tone": "^13.4.9"
+    "npm": "^6.7.0"
   },
   "devDependencies": {
     "eslint": "^5.13.0"

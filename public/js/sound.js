@@ -19,7 +19,7 @@ gain.toMaster();//gain volume
 
 synths.forEach(synth => synth.connect(gain));
 
-const rows = [[0,1,0,1,0,1,0,1],[1,0,0,1,0,0,1,0],[1,0,0,0,1,0,0,0,0]],
+const cycles = [[0,1,0,1,0,1,0,1],[1,0,0,1,0,0,1,0],[1,0,0,0,1,0,0,0,0]],
       notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 
@@ -28,12 +28,12 @@ Tone.Transport.start();
 
 function loop(time) {
   let step = index % 8;
-  for (let i = 0; i < rows.length; i++) {
+  for (let i = 0; i < cycles.length; i++) {
     let synth = synths[i],
         note = notes[i],
-        row = rows[i],
-        input = row[step];
-    if (input == 1) synth.triggerAttackRelease(note, '8n', time);
-  }
+        cycle = cycles[i],
+        input = cycle[step];
+    if (input == 1) synth.triggerAttackRelease(note, '8n', time);//play the note if the current buffer is 1
+}//
   index++;
 }

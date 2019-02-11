@@ -1,6 +1,5 @@
 const express = require('express');
 var path = require('path');
-require("midi");
 const app = express();
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));

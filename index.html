@@ -30,9 +30,9 @@
           </div>
           <div id='general'>
             <label for="steps_num">STEPS PER MEASURE</label>
-            <input type="range" class="slider" name="steps_num" min="0" max="16" value="1" step="1"
-              oninput="populateAll(this.value)"
-              onchange="populateAll(this.value)">
+            <input type="range" id="step_val"class="slider" name="steps_num" min="0" max="16" value="1" step="1"
+              oninput="populateAll()"
+              onchange="populateAll()">
 
             <label for="tempo_num">TEMPO</label>
             <input type="range" class="slider" name="tempo_num" min="0" max="16" value="1" step="1"
@@ -50,9 +50,9 @@
               </label>
             </div>
             <label for="dot_num1">Pulses per measure</label>
-            <input type="range" class="slider" name="dot_num1" min="0" max="16" value="1" step="1"
-              oninput=""
-              onchange="">
+            <input type="range" id="pulse_val_one" class="slider" name="dot_num1" min="0" max="16" value="1" step="1"
+              oninput="populateAll()"
+              onchange="populateAll()">
           </div>
           <div id="voice2">
             <h3>Voice 2</h3>
@@ -65,9 +65,9 @@
               </label>
             </div>
             <label for="dot_num2">Pulses per measure</label>
-            <input type="range" class="slider" name="dot_num2" min="0" max="16" value="1" step="1"
-              oninput=""
-              onchange="">
+            <input type="range" id="pulse_val_two" class="slider" name="dot_num2" min="0" max="16" value="1" step="1"
+              oninput="populateAll()"
+              onchange="populateAll()">
           </div>
           <div id="voice3">
             <h3>Voice 3</h3>
@@ -80,9 +80,9 @@
               </label>
             </div>
             <label for="dot_num3">Pulses per measure</label>
-            <input type="range" class="slider" name="dot_num3" min="0" max="16" value="1" step="1"
-              oninput=""
-              onchange="">
+            <input type="range" id="pulse_val_three" class="slider" name="dot_num3" min="0" max="16" value="1" step="1"
+              oninput="populateAll()"
+              onchange="populateAll()">
           </div>
         </div>
       </div>

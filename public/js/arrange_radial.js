@@ -19,12 +19,15 @@ var dot_template3 = document.createElement('div'); // template for dot to popula
 dot_template3.setAttribute('class', 'dot');
 dot_template3.setAttribute('id', 'dot3');
 
-function populateAll(n){  //change all three voices at the same time [ THIS IS THE ONE THAT SHOULD BE CALLED ON CHANGE ( FOR GENERAL )]
+function populateAll(){  //change all three voices at the same time [ THIS IS THE ONE THAT SHOULD BE CALLED ON CHANGE ( FOR GENERAL )]
+  var n = document.getElementById("step_val").value;
+  updateSeq()
   populate(n, 'circle1', 1);
   populate(n, 'circle2', 2);
   populate(n, 'circle3', 3);
-  pulses()
+  pulses();
 }
+
 function populate(n,p,m){ // populate circle with n dots
   var parent = document.getElementById(p);
   if (parent){

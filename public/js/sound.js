@@ -32,8 +32,8 @@ function makeEuclidSeq(steps, pulses){//euclid function
 	for(let s =0; s < steps; s++){
 		if(y >= x+1){
 			x++;
-			seq.push(1);	
-		} 
+			seq.push(1);
+		}
 		else {
 			seq.push(0);
 		}
@@ -43,7 +43,8 @@ function makeEuclidSeq(steps, pulses){//euclid function
 	return seq;
 }
 
-const cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
+
+var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
       notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 
@@ -60,4 +61,12 @@ function loop(time) {
     if (input == 1) synth.triggerAttackRelease(note, '8n', time);//play the note if the current buffer is 1
 	}
   index++;
+}
+
+function updateSeq(){  // call on change to update information
+  var steps = document.getElementById("step_val").value;
+  var pulse_one = document.getElementById("pulse_val_one").value;
+  var pulse_two = document.getElementById("pulse_val_two").value;
+  var pulse_three = document.getElementById("pulse_val_three").value;
+  cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }

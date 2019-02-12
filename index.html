@@ -28,6 +28,10 @@
             <button id="v3_btn" class='btn_control' type="button">Voice3</button>
           </div>
           <div id='general'>
+            <label for="steps_num">STEPS PER MEASURE</label>
+            <input type="range" class="slider" name="steps_num" min="0" max="16" value="1" step="1"
+              oninput="populateAll(this.value)"
+              onchange="populateAll(this.value)">
           </div>
           <div id="voice1">
             <h3>Voice 1</h3>

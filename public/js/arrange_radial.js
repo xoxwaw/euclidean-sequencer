@@ -18,6 +18,12 @@ var dot_template3 = document.createElement('div'); // template for dot to popula
 dot_template3.setAttribute('class', 'dot');
 dot_template3.setAttribute('id', 'dot3');
 
+function populateAll(n){
+  populate(n, 'circle1', 1);
+  populate(n, 'circle2', 2);
+  populate(n, 'circle3', 3);
+}
+
 function populate(n,p,m){ // populate circle with n dots
   var parent = document.getElementById(p);
   if (parent){

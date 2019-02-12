@@ -47,7 +47,14 @@ h3{
   border: 3px dashed white;
 }
 .dot{
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.dot_pulse{
+  background-color: rgba(0,0,0,0.8);
   position: absolute;
   width: 30px;
   height: 30px;

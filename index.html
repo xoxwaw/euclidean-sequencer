@@ -11,9 +11,10 @@
         <script src="https://unpkg.com/tone"></script>
         <script src="https://unpkg.com/@tonejs/ui"></script>
 
+        <script type="text/javascript" src="js/sound.js"></script>
         <script type="text/javascript" src="js/arrange_radial.js"></script>
         <script type="text/javascript" src="js/voice_display.js"></script>
-        <script type="text/javascript" src="js/sound.js"></script>
+
 
     </head>
     <body>
@@ -32,6 +33,11 @@
             <input type="range" class="slider" name="steps_num" min="0" max="16" value="1" step="1"
               oninput="populateAll(this.value)"
               onchange="populateAll(this.value)">
+
+            <label for="tempo_num">TEMPO</label>
+            <input type="range" class="slider" name="tempo_num" min="0" max="16" value="1" step="1"
+              oninput=""
+              onchange="">
           </div>
           <div id="voice1">
             <h3>Voice 1</h3>
@@ -43,7 +49,7 @@
                 <span class="onoffswitch-switch"></span>
               </label>
             </div>
-            <label for="dot_num1">Notes per measure</label>
+            <label for="dot_num1">Pulses per measure</label>
             <input type="range" class="slider" name="dot_num1" min="0" max="16" value="1" step="1"
               oninput="populate(this.value,'circle1',1)"
               onchange="populate(this.value, 'circle1',1)">
@@ -58,10 +64,10 @@
                 <span class="onoffswitch-switch"></span>
               </label>
             </div>
-            <label for="dot_num2">Notes per measure</label>
+            <label for="dot_num2">Pulses per measure</label>
             <input type="range" class="slider" name="dot_num2" min="0" max="16" value="1" step="1"
-              oninput="populate(this.value,'circle2',2)"
-              onchange="populate(this.value, 'circle2',2)">
+              oninput=""
+              onchange="">
           </div>
           <div id="voice3">
             <h3>Voice 3</h3>
@@ -73,10 +79,10 @@
                 <span class="onoffswitch-switch"></span>
               </label>
             </div>
-            <label for="dot_num3">Notes per measure</label>
+            <label for="dot_num3">Pulses per measure</label>
             <input type="range" class="slider" name="dot_num3" min="0" max="16" value="1" step="1"
-              oninput="populate(this.value,'circle3',3)"
-              onchange="populate(this.value, 'circle3,3')">
+              oninput=""
+              onchange="">
           </div>
         </div>
       </div>

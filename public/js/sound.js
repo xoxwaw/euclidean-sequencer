@@ -37,14 +37,13 @@ function makeEuclidSeq(steps, pulses){//euclid function
 		else {
 			seq.push(0);
 		}
-		console.log(y);
 		y = y + (pulses/steps);
 	}
 	console.log(seq);
 	return seq;
 }
 
-const cycles = [makeEuclidSeq(8,5),makeEuclidSeq(8,4),makeEuclidSeq(8,3)],
+const cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
       notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 

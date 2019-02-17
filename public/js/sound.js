@@ -25,23 +25,23 @@ let pulseCount = 3
 
 
 
-// function makeEuclidSeq(steps, pulses){//euclid function
-// 	let seq = [];
-// 	let x = -1;
-// 	let y = 0;
-// 	for(let s =0; s < steps; s++){
-// 		if(y >= x+1){
-// 			x++;
-// 			seq.push(1);
-// 		}
-// 		else {
-// 			seq.push(0);
-// 		}
-// 		y = y + (pulses/steps);
-// 	}
-// 	console.log(seq);
-// 	return seq;
-// }
+function makeEuclidSeq(steps, pulses){//euclid function
+	let seq = [];
+	let x = -1;
+	let y = 0;
+	for(let s =0; s < steps; s++){
+		if(y >= x+1){
+			x++;
+			seq.push(1);
+		}
+		else {
+			seq.push(0);
+		}
+		y = y + (pulses/steps);
+	}
+	console.log(seq);
+	return seq;
+}
 
 
 var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
@@ -69,12 +69,12 @@ function generateBinarySequence(step, pulse){
         sequence[i] = (i%pulse == 0 ? 1 : 0);
     }
     return sequence;
-} //
+}
 
 function updateSeq(){  // call on change to update information
   var steps = document.getElementById("step_val").value;
   var pulse_one = document.getElementById("pulse_val_one").value;
   var pulse_two = document.getElementById("pulse_val_two").value;
   var pulse_three = document.getElementById("pulse_val_three").value;
-  cycles = [generateBinarySequence(steps,pulse_one),generateBinarySequence(steps,pulse_two),generateBinarySequence(steps,pulse_three)]
+  cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }

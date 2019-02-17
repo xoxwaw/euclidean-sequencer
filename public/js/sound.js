@@ -19,12 +19,33 @@ gain.toMaster(); //gain volume
 
 synths.forEach(synth => synth.connect(gain));
 
-const cycles = [
-        [0, 1, 0, 1, 0, 1, 0, 1],
-        [1, 0, 0, 1, 0, 0, 1, 0],
-        [1, 0, 0, 0, 1, 0, 0, 0]
-    ],
-    notes = ['G5', 'E4', 'C3']; //sample sequencer
+let stepCount = 8
+let pulseCount = 3
+
+
+
+
+function makeEuclidSeq(steps, pulses){//euclid function
+	let seq = [];
+	let x = -1;
+	let y = 0;
+	for(let s =0; s < steps; s++){
+		if(y >= x+1){
+			x++;
+			seq.push(1);
+		}
+		else {
+			seq.push(0);
+		}
+		y = y + (pulses/steps);
+	}
+	console.log(seq);
+	return seq;
+}
+
+
+var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
+      notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 
 Tone.Transport.scheduleRepeat(loop, '8n');
@@ -48,4 +69,12 @@ function generateBinarySequence(step){
         sequence[i] = (i%step == 0 ? 1 : 0);
     }
     return sequence;
+}
+
+function updateSeq(){  // call on change to update information
+  var steps = document.getElementById("step_val").value;
+  var pulse_one = document.getElementById("pulse_val_one").value;
+  var pulse_two = document.getElementById("pulse_val_two").value;
+  var pulse_three = document.getElementById("pulse_val_three").value;
+  cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }

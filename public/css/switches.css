@@ -1,95 +1,104 @@
 /*
-  SLIDERS
+  SLIDERS (THUMB)
 */
 input[type=range] {
-    /*removes default webkit styles*/
-    -webkit-appearance: none;
-
-    /*fix for FF unable to apply focus style bug */
-    border: 1px solid white;
-
-    /*required for proper track sizing in FF*/
-    width: 200px;
-    margin-top: 15px;
-}
-input[type=range]::-webkit-slider-runnable-track {
-    width: 200px;
-    height: 5px;
-    background: #ddd;
-    border: none;
-    border-radius: 3px;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: black;
-    margin-top: -4px;
+  -webkit-appearance: none;
+  width: 90%;
+  margin: -1px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  margin-left: 5px;
 }
 input[type=range]:focus {
-    outline: none;
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 18px;
+  cursor: pointer;
+  box-shadow: 0.5px 0.5px 3.1px #000000, 0px 0px 0.5px #0d0d0d;
+  background: #dcdcdc;
+  border-radius: 15.6px;
+  outline: none;
+  border: 4.2px solid #ffffff;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  height: 16px;
+  width: 16px;
+  border-radius: 37px;
+  background: #000000;
+  cursor: pointer;
+  -webkit-appearance: none;
+  outline: none;
+  margin-top: -3.2px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ccc;
+  background: #e9e9e9;
+  outline: none;
 }
-
 input[type=range]::-moz-range-track {
-    width: 200px;
-    height: 5px;
-    background: #ddd;
-    border: none;
-    border-radius: 3px;
+  width: 100%;
+  height: 18px;
+  cursor: pointer;
+  box-shadow: 0.5px 0.5px 3.1px #000000, 0px 0px 0.5px #0d0d0d;
+  background: #dcdcdc;
+  border-radius: 15.6px;
+  border: 4.2px solid #ffffff;
+  outline: none;
 }
 input[type=range]::-moz-range-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  height: 16px;
+  width: 16px;
+  border-radius: 37px;
+  background: #000000;
+  cursor: pointer;
+  outline: none;
 }
-
-/*hide the outline behind the border*/
-input[type=range]:-moz-focusring{
-    outline: 1px solid white;
-    outline-offset: -1px;
-}
-
 input[type=range]::-ms-track {
-    width: 200px;
-    height: 5px;
-
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-    background: transparent;
-
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
-
-    /*remove default tick marks*/
-    color: transparent;
+  width: 100%;
+  height: 18px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  outline: none;
 }
 input[type=range]::-ms-fill-lower {
-    background: #777;
-    border-radius: 10px;
+  background: #cfcfcf;
+  border: 4.2px solid #ffffff;
+  border-radius: 31.2px;
+  box-shadow: 0.5px 0.5px 3.1px #000000, 0px 0px 0.5px #0d0d0d;
+  outline: none;
 }
 input[type=range]::-ms-fill-upper {
-    background: #ddd;
-    border-radius: 10px;
+  background: #dcdcdc;
+  border: 4.2px solid #ffffff;
+  border-radius: 31.2px;
+  box-shadow: 0.5px 0.5px 3.1px #000000, 0px 0px 0.5px #0d0d0d;
+  outline: none;
 }
 input[type=range]::-ms-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  width: 16px;
+  border-radius: 37px;
+  background: #000000;
+  cursor: pointer;
+  height: 16px;
+  outline: none;
 }
 input[type=range]:focus::-ms-fill-lower {
-    background: #888;
+  background: #dcdcdc;
+  outline: none;
 }
 input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
+  background: #e9e9e9;
+  outline: none;
 }
 
 /*
@@ -140,4 +149,29 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
+}
+/*
+  BUTTONS
+*/
+.btn_control {
+	background-color:#b3b3b3;
+	-moz-border-radius:16px;
+	-webkit-border-radius:16px;
+	border-radius:4px;
+	border:2px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:15px;
+	padding:2px 4px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.btn_control:hover {
+	background-color:#474747;
+}
+.btn_control:active {
+	position:relative;
+	top:1px;
 }

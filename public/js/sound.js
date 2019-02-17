@@ -19,8 +19,9 @@ gain.toMaster(); //gain volume
 
 synths.forEach(synth => synth.connect(gain));
 
-let stepCount = 8
-let pulseCount = 3
+let stepCount = 8,
+    pulseCount = 3,
+    tempo = '8n';
 
 
 
@@ -48,7 +49,7 @@ var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
       notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 
-Tone.Transport.scheduleRepeat(loop, '8n');
+Tone.Transport.scheduleRepeat(loop, tempo);
 Tone.Transport.start();
 
 function loop(time) {
@@ -61,6 +62,7 @@ function loop(time) {
         if (input == 1) synth.triggerAttackRelease(note, '8n', time); //play the note if the current buffer is 1
     } //
     index++;
+
 }
 
 function generateBinarySequence(step, pulse){
@@ -76,5 +78,7 @@ function updateSeq(){  // call on change to update information
   var pulse_one = document.getElementById("pulse_val_one").value;
   var pulse_two = document.getElementById("pulse_val_two").value;
   var pulse_three = document.getElementById("pulse_val_three").value;
+  var tempo = String(document.getElementById("tempo").value) + 'n';
+  console.log(tempo);
   cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }

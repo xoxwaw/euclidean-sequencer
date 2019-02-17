@@ -62,38 +62,23 @@ function arrange(p){ // arrange dots with euclidian spacing
     children[x].style.right = coord_y+'px';
   }
 }
+
+function setPulses(id){
+    var circle_id = "circle" + String(id+1);
+    var parent = document.getElementById(circle_id);
+    var children = parent.getElementsByTagName('div');
+    for (var x = 0; x < cycles[id].length;x++){
+        if (cycles[id][x] == 1){
+            children[x].setAttribute('class', 'dot_pulse');
+        }else{
+            children[x].setAttribute('class', 'dot');
+        }
+    }
+}
+
 function pulses(){
-  var parent1 = document.getElementById('circle1');
-  var children1 = parent1.getElementsByTagName('div');
-  for(var x = 0; x < cycles[0].length; x++){
-    if (cycles[0][x] == 1){
-      children1[x].setAttribute('class', 'dot_pulse');
+    for (var i = 0; i < 3; i++){
+        setPulses(i);
     }
-    else{
-      children1[x].setAttribute('class', 'dot');
-    }
-  }
-
-  var parent2 = document.getElementById('circle2');
-  var children2 = parent2.getElementsByTagName('div');
-  for(var x = 0; x < cycles[1].length; x++){
-    if (cycles[1][x] == 1){
-      children2[x].setAttribute('class', 'dot_pulse');
-    }
-    else{
-      children2[x].setAttribute('class', 'dot');
-    }
-  }
-
-  var parent3 = document.getElementById('circle3');
-  var children3 = parent3.getElementsByTagName('div');
-  for(var x = 0; x < cycles[2].length; x++){
-    if (cycles[2][x] == 1){
-      children3[x].setAttribute('class', 'dot_pulse');
-    }
-    else{
-      children3[x].setAttribute('class', 'dot');
-    }
-  }
 }
 console.log(cycles);

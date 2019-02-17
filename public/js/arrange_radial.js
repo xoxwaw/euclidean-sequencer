@@ -7,24 +7,24 @@ Porter L
     2 / 3 / 19 : Initial commit + add templates
     2 / 4 / 19 : Fix null error
     2 / 12 / 19 : Add connections to backend and populate all function for general
+
+Phi // NOTE: Feb12 rewrite the functions to clean up code space
 */
 console.log("arrange_radial loaded");
-var dot_template1 = document.createElement('div'); // template for dot to populate circles
-dot_template1.setAttribute('class', 'dot');
-dot_template1.setAttribute('id', 'dot1');
-var dot_template2 = document.createElement('div'); // template for dot to populate circles
-dot_template2.setAttribute('class', 'dot');
-dot_template2.setAttribute('id', 'dot2');
-var dot_template3 = document.createElement('div'); // template for dot to populate circles
-dot_template3.setAttribute('class', 'dot');
-dot_template3.setAttribute('id', 'dot3');
+var dot_template = [];
+for (var i = 0; i < 3; i++){
+    let template = document.createElement('div');
+    template.setAttribute('class','dot');
+    template.setAttribute('id', 'dot'+String(i+1));
+    dot_template.push(template);
+}
 
 function populateAll(){  //change all three voices at the same time [ THIS IS THE ONE THAT SHOULD BE CALLED ON CHANGE ( FOR GENERAL )]
   var n = document.getElementById("step_val").value;
-  updateSeq()
-  populate(n, 'circle1', 1);
-  populate(n, 'circle2', 2);
-  populate(n, 'circle3', 3);
+  updateSeq();
+  for (var i = 1; i < 4; i++){
+      populate(n, "circle"+ i, i);
+  }
   pulses();
 }
 
@@ -33,16 +33,7 @@ function populate(n,p,m){ // populate circle with n dots
   if (parent){
     parent.innerHTML = '';
     for (var x = 0; x < n; x++){
-      var cln;
-      if (m == 1){
-        cln = dot_template1.cloneNode(true);
-      }
-      else if (m == 2){
-        cln = dot_template2.cloneNode(true);
-      }
-      else{
-        cln = dot_template3.cloneNode(true);
-      }
+      var cln = dot_template[m-1].cloneNode(true);
       parent.appendChild(cln);
     }
     arrange(p); // call to arrange after each time the number of dots changes

@@ -23,9 +23,6 @@ let stepCount = 8,
     pulseCount = 3,
     tempo = '8n';
 
-
-
-
 function makeEuclidSeq(steps, pulses){//euclid function
 	let seq = [];
 	let x = -1;
@@ -46,7 +43,7 @@ function makeEuclidSeq(steps, pulses){//euclid function
 
 
 var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
-      notes = ['G5', 'E4', 'C3'];//sample sequencer
+    notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 
 Tone.Transport.scheduleRepeat(loop, tempo);

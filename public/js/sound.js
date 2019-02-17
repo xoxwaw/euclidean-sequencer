@@ -22,7 +22,7 @@ synths.forEach(synth => synth.connect(gain));
 const cycles = [
         [0, 1, 0, 1, 0, 1, 0, 1],
         [1, 0, 0, 1, 0, 0, 1, 0],
-        [1, 0, 0, 0, 1, 0, 0, 0, 0]
+        [1, 0, 0, 0, 1, 0, 0, 0]
     ],
     notes = ['G5', 'E4', 'C3']; //sample sequencer
 let index = 0;
@@ -40,4 +40,12 @@ function loop(time) {
         if (input == 1) synth.triggerAttackRelease(note, '8n', time); //play the note if the current buffer is 1
     } //
     index++;
+}
+
+function generateBinarySequence(step){
+    sequence = [];
+    for (var i = 0; i < 16; i++){
+        sequence[i] = (i%step == 0 ? 1 : 0);
+    }
+    return sequence;
 }

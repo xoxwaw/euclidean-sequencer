@@ -41,6 +41,15 @@ function makeEuclidSeq(steps, pulses){//euclid function
 	return seq;
 }
 
+function offset(seq_in, offset){//return sequence array rotated by offset value
+	steps = seq_in.length;
+	offset = offset % steps; //fix if offset is longer than sequence
+	let seq_front = seq_in.slice(0, steps - offset);
+	let seq_back = seq_in.slice(steps - offset);
+	let seq_out = seq_back.concat(seq_front);
+	return seq_out;
+}
+
 
 var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
     notes = ['G5', 'E4', 'C3'];//sample sequencer

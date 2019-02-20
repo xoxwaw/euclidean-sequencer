@@ -11,9 +11,9 @@
         <script src="https://unpkg.com/tone"></script>
         <script src="https://unpkg.com/@tonejs/ui"></script>
 
-        <script type="text/javascript" src="js/sound.js"></script>
-        <script type="text/javascript" src="js/arrange_radial.js"></script>
-        <script type="text/javascript" src="js/voice_display.js"></script>
+        <script type="text/javascript" src="../js/sound.js"></script>
+        <script type="text/javascript" src="../js/arrange_radial.js"></script>
+        <script type="text/javascript" src="../js/voice_display.js"></script>
 
 
     </head>
@@ -35,7 +35,7 @@
               onchange="populateAll()">
 
             <label for="tempo_num">TEMPO</label>
-            <input type="range" class="slider" id = "tempo_val" name="tempo_num" min="0" max="16" value="1" step="1"
+            <input type="range" class="slider" id = "tempo" name="tempo_num" min="0" max="16" value="1" step="1"
               oninput=""
               onchange="">
           </div>

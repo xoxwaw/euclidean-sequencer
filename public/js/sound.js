@@ -75,7 +75,8 @@ function updateSeq(){  // call on change to update information
   var pulse_one = document.getElementById("pulse_val_one").value;
   var pulse_two = document.getElementById("pulse_val_two").value;
   var pulse_three = document.getElementById("pulse_val_three").value;
-  var tempo = String(document.getElementById("tempo").value) + 'n';
+  var tempo = String(document.getElementById("tempo_val").value) + 'n';
+  // Tone.Transport.bpm.rampTo(tempo, 0.5);
   console.log(tempo);
   cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }

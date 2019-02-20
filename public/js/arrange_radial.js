@@ -54,7 +54,7 @@ function arrange(p){ // arrange dots with euclidian spacing
   }
 }
 
-function setPulses(id){
+function setPulses(id){//
     var circle_id = "circle" + String(id+1);
     var parent = document.getElementById(circle_id);
     var children = parent.getElementsByTagName('div');
@@ -72,4 +72,3 @@ function pulses(){
         setPulses(i);
     }
 }
-console.log(cycles);

@@ -4,6 +4,9 @@ body{
   width: 100%;
 
 }
+#controls{
+  height: 400px;
+}
 h1{
   font-size: 25px;
   font-family: monospace;

@@ -20,4 +20,20 @@ function voiceToggle(s,p){
 
   }
 
-} 
+}
+function updatePitch(elem, pitchNum){
+  console.log(elem);
+  console.log(pitchNum);
+
+  if (elem.classList.contains('active') == false){
+    var container = elem.parentElement;
+    var children = container.children;
+
+    for (var i = 0; i < children.length; i++) {
+      children[i].classList.remove('active');
+      // Do stuff
+    }
+    elem.classList.add('active');
+  }
+
+}

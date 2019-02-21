@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Euclidian Sequencer</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/switches.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
@@ -29,6 +30,9 @@
             <button id="v3_btn" class='btn_control' type="button">Voice3</button>
           </div>
           <div id='general'>
+            <div id="playpause_container">
+              <button class='playpause'></button>
+            </div>
             <label for="steps_num">STEPS PER MEASURE</label>
             <input type="range" id="step_val"class="slider" name="steps_num" min="0" max="16" value="1" step="1"
               oninput="populateAll()"
@@ -181,6 +185,21 @@
             $("#voice2").slideUp();
             $("#voice3").slideUp();
             $("#general").slideDown();
+        });
+
+        $(document).ready(function() {
+          var btn = $(".playpause");
+          btn.click(function() {
+            console.log(btn);
+            if (btn[0].classList.contains('paused')){
+              btn[0].classList.remove('paused');
+              Tone.Transport.stop();
+            }else{
+              btn[0].classList.add('paused');
+              Tone.Transport.start();
+            }
+            return false;
+          });
         });
 
       </script>

@@ -4,9 +4,17 @@ body{
   width: 100%;
 
 }
-#controls{
-  height: 400px;
+/* REMOVE ALL THE OUTLINE SELECTORS */
+input::-moz-focus-inner {
+  border: 0;
 }
+button::-moz-focus-inner {
+  border: 0;
+}
+a{
+  outline: 0;
+}
+
 h1{
   font-size: 25px;
   font-family: monospace;
@@ -73,6 +81,9 @@ h3{
 #dot3{
   border: 1px solid blue;
 }
+#controls{
+  height: 400px;
+}
 #controlbtns{
   margin-bottom: 10px;
   margin-top: 20px;
@@ -101,6 +112,7 @@ h3{
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 5px;
+  height: 500px;
 }
 #voice1{
   border-radius: 5px;

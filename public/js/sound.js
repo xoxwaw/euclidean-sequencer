@@ -49,6 +49,11 @@ function offset(seq_in, offset){//return sequence array rotated by offset value
 	let seq_out = seq_back.concat(seq_front);
 	return seq_out;
 }
+function updatePitch(pitch_code, voice_number){
+  notes[voice_number] = pitch_code;
+  // set the pitch of a specific voice. input comes from updatePitchWrapper
+  // in voice_display.js which connects to the UI.
+}
 
 
 var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],

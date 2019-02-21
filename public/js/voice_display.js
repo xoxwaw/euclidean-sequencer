@@ -21,10 +21,9 @@ function voiceToggle(s,p){
   }
 
 }
-function updatePitch(elem, pitchNum){
-  console.log(elem);
-  console.log(pitchNum);
-
+function updatePitchWrapper(elem, pitch_num, voice_index){
+  pitch_codes = ['C5','C#5','D5','D#5','E5','F5','F#5','G5','G#5','A5','A#5','B5']
+  updatePitch(pitch_codes[pitch_num], voice_index);  //call to sound.js to change note in voice
   if (elem.classList.contains('active') == false){
     var container = elem.parentElement;
     var children = container.children;

@@ -134,3 +134,8 @@ h3{
   position: relative;
   margin-bottom: 40px;
 }
+#step_counter{
+  float: left;
+  width: 100%;
+  height: 20px;
+}

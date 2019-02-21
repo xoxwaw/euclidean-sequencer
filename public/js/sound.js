@@ -64,7 +64,8 @@ Tone.Transport.scheduleRepeat(loop, tempo);
 Tone.Transport.start();
 
 function loop(time) {
-    let step = index % 8;
+    let step = index % document.getElementById("step_val").value;
+    document.getElementById("step_counter").innerHTML = step; //output step # to screen
     for (let i = 0; i < cycles.length; i++) {
         let synth = synths[i],
             note = notes[i],

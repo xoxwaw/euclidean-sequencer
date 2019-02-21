@@ -65,6 +65,7 @@ Tone.Transport.start();
 
 function loop(time) {
     let step = index % document.getElementById("step_val").value;
+    activeStep(step);
     document.getElementById("step_counter").innerHTML = step; //output step # to screen
     for (let i = 0; i < cycles.length; i++) {
         let synth = synths[i],
@@ -93,4 +94,16 @@ function updateSeq(){  // call on change to update information
   var tempo = String(document.getElementById("tempo").value) + 'n';
   console.log(tempo);
   cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
+}
+function activeStep(current_step){ // set the active step to dot_active class
+  voices = ['circle1','circle2','circle3'];
+  for (let i = 0; i < voices.length; i++){ // iterate over i voices
+    var container = document.getElementById(voices[i]);
+    var children = container.children;
+    for (let j = 0; j < children.length; j++){ // iterate over j children of voice i
+      children[j].setAttribute('id', 'dot'+String(i+1)); // reset the class of all children in voice i
+    }
+    children[current_step].setAttribute('id', 'dot_active'); // set active step to be of different subclass
+    // this way it will be a different color.
+  }
 }

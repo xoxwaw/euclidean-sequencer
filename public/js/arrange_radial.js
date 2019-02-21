@@ -7,7 +7,7 @@ Porter L
     2 / 3 / 19 : Initial commit + add templates
     2 / 4 / 19 : Fix null error
     2 / 12 / 19 : Add connections to backend and populate all function for general
-
+    
 Phi // NOTE: Feb12 rewrite the functions to clean up code space
 */
 console.log("arrange_radial loaded");
@@ -72,4 +72,4 @@ function pulses(){
         setPulses(i);
     }
 }
-console.log(cycles);
+populateAll() // on load populate with current values.

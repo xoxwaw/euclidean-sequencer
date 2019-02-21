@@ -90,6 +90,9 @@ h3{
 #dot_active{
   border: 1px solid black;
   background-color: white;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
 }
 #controls{
   height: 400px;

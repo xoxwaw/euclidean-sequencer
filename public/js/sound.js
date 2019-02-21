@@ -65,7 +65,6 @@ Tone.Transport.start();
 
 function loop(time) {
     let step = index % document.getElementById("step_val").value;
-    activeStep(step);
     document.getElementById("step_counter").innerHTML = step; //output step # to screen
     for (let i = 0; i < cycles.length; i++) {
         let synth = synths[i],
@@ -73,9 +72,9 @@ function loop(time) {
             cycle = cycles[i],
             input = cycle[step];
         if (input == 1) synth.triggerAttackRelease(note, '8n', time); //play the note if the current buffer is 1
-    } //
+    }
+    activeStep(step);
     index++;
-
 }
 
 function generateBinarySequence(step, pulse){

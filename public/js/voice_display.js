@@ -35,7 +35,8 @@ function updatePitchWrapper(elem, pitch_num, voice_index){
     elem.classList.add('active');
   }
 }
+
 function updateColor(color, dot_index){
-  document.styleSheets[3].cssRules[dot_index - 1].style.borderColor = color;
-  document.styleSheets[3].cssRules[dot_index + 2].style.color = color;
+  document.styleSheets[3].cssRules[dot_index - 1].style.borderColor = color; // change color of dot by voice number
+  document.styleSheets[3].cssRules[dot_index + 2].style.color = color; // change color of voice tab by voice number
 }

@@ -60,6 +60,13 @@
                     <div class="blackkey" onclick="updatePitchWrapper(this,10,0)"><p>A#</p></div>
                     <div class="whitekey" onclick="updatePitchWrapper(this,11,0)"><p>B</p></div>
                 </div>
+                Pick Wave type:
+                <select>
+                  <option value="sine">Sine</option>
+                  <option value="saw">Saw</option>
+                  <option value="square">Square</option>
+                  <option value="triangle">Triangle</option>
+                </select></br></br>
                 <input type="color" id="voice_color" name="voice_color"
                      value="#e66465"
                      onchange="updateColor(this.value, <%=i%>)"

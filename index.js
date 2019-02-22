@@ -3,7 +3,10 @@ var path = require('path');
 const app = express();
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.render("index",{
+        numCycles: 3
+    })
+    // res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.use(express.static(__dirname + '/public'));

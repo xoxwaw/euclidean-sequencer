@@ -37,7 +37,6 @@ function makeEuclidSeq(steps, pulses){//euclid function
 		}
 		y = y + (pulses/steps);
 	}
-	console.log(seq);
 	return seq;
 }
 
@@ -60,7 +59,7 @@ var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
     notes = ['G5', 'E4', 'C3'];//sample sequencer
 let index = 0;
 
-Tone.Transport.scheduleRepeat(loop, tempo);
+Tone.Transport.scheduleRepeat(loop, "8n");
 Tone.Transport.start();
 
 function loop(time) {
@@ -71,8 +70,9 @@ function loop(time) {
             note = notes[i],
             cycle = cycles[i],
             input = cycle[step];
-        if (input == 1) synth.triggerAttackRelease(note, '8n', time); //play the note if the current buffer is 1
+        if (input == 1) synth.triggerAttackRelease(note, tempo, time); //play the note if the current buffer is 1
     }
+    console.log(tempo);
     activeStep(step);
     index++;
 }
@@ -87,12 +87,10 @@ function generateBinarySequence(step, pulse){
 
 function updateSeq(){  // call on change to update information
   var steps = document.getElementById("step_val").value;
-  var pulse_one = document.getElementById("pulse_val_one").value;
-  var pulse_two = document.getElementById("pulse_val_two").value;
-  var pulse_three = document.getElementById("pulse_val_three").value;
-  var tempo = String(document.getElementById("tempo_val").value) + 'n';
-  // Tone.Transport.bpm.rampTo(tempo, 0.5);
-  console.log(tempo);
+  var pulse_one = document.getElementById("pulse_val_1").value;
+  var pulse_two = document.getElementById("pulse_val_2").value;
+  var pulse_three = document.getElementById("pulse_val_3").value;
+  var tempo = (document.getElementById("tempo_val").value) + 'n';
   cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }
 function activeStep(current_step){ // set the active step to dot_active class

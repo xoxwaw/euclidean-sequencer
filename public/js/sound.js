@@ -86,11 +86,15 @@ function generateBinarySequence(step, pulse){
 }
 
 function updateSeq(){  // call on change to update information
-  var steps = document.getElementById("step_val").value;
-  var pulse_one = document.getElementById("pulse_val_1").value;
-  var pulse_two = document.getElementById("pulse_val_2").value;
-  var pulse_three = document.getElementById("pulse_val_3").value;
-  var tempo = (document.getElementById("tempo_val").value) + 'n';
+  var steps = 1, pulse_one = 1, pulse_two = 1, pulse_three = 1;
+  if (document.getElementById("step_val")!= null){
+      steps = document.getElementById("step_val").value;
+      pulse_one = document.getElementById("pulse_val_1").value;
+      pulse_two = document.getElementById("pulse_val_2").value;
+      pulse_three = document.getElementById("pulse_val_3").value;
+  }
+
+  // var tempo = (document.getElementById("tempo_val").value) + 'n';
   cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }
 function activeStep(current_step){ // set the active step to dot_active class

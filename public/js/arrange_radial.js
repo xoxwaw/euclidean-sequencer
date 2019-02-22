@@ -20,7 +20,10 @@ for (var i = 0; i < 3; i++){
 }
 
 function populateAll(){  //change all three voices at the same time [ THIS IS THE ONE THAT SHOULD BE CALLED ON CHANGE ( FOR GENERAL )]
-  var n = document.getElementById("step_val").value;
+  var n = 1;
+  if (document.getElementById("step_val") != null){
+      n = document.getElementById("step_val").value;
+  }
   updateSeq();
   for (var i = 1; i < 4; i++){
       populate(n, "circle"+ i, i);
@@ -57,12 +60,17 @@ function arrange(p){ // arrange dots with euclidian spacing
 function setPulses(id){//
     var circle_id = "circle" + String(id+1);
     var parent = document.getElementById(circle_id);
-    var children = parent.getElementsByTagName('div');
+    var children = [];
+    if (parent != null){
+        children = parent.getElementsByTagName('div');
+    }
     for (var x = 0; x < cycles[id].length;x++){
-        if (cycles[id][x] == 1){
-            children[x].setAttribute('class', 'dot_pulse');
-        }else{
-            children[x].setAttribute('class', 'dot');
+        if (children[x] != null){
+            if (cycles[id][x] == 1){
+                children[x].setAttribute('class', 'dot_pulse');
+            }else{
+                children[x].setAttribute('class', 'dot');
+            }
         }
     }
 }

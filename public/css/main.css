@@ -78,18 +78,14 @@ h3{
   border-radius: 50px;
 }
 .dot{
-
 }
 #dot1{
-  border: 1px solid red;
   transition-duration: 200ms;
 }
 #dot2{
-  border: 1px solid green;
   transition-duration: 200ms;
 }
 #dot3{
-  border: 1px solid blue;
   transition-duration: 200ms;
 }
 #dot_active{
@@ -125,6 +121,9 @@ h3{
 #vis_container{
   position:absolute;
   left: 400px;
+}
+#voice_color{
+  margin-bottom: 20px;
 }
 #general{
   border-radius: 5px;

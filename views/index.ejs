@@ -33,7 +33,7 @@
               <button class='playpause'></button>
             </div>
             <label for="steps_num">STEPS PER MEASURE</label>
-            <input type="range" id="step_val"class="slider" name="steps_num" min="0" max="16" value="1" step="1"
+            <input type="range" id="step_val"class="slider" name="steps_num" min="1" max="16" value="4" step="1"
               oninput="populateAll()"
               onchange="populateAll()">
 
@@ -45,7 +45,7 @@
             <%for (var i = 1; i < numCycles+1;i++){ %>
               <div id="voice<%=i%>">
                 <h3>Voice <%=i%></h3>
-                <div class='keyboard'> 
+                <div class='keyboard'>
                     <div class="whitekey" onclick="updatePitchWrapper(this,0,0)"><p>C</p></div>
                     <div class="blackkey" onclick="updatePitchWrapper(this,1,0)"><p>C#</p></div>
                     <div class="whitekey" onclick="updatePitchWrapper(this,2,0)"><p>D</p></div>
@@ -111,7 +111,6 @@
         $(document).ready(function() {
           var btn = $(".playpause");
           btn.click(function() {
-            console.log(btn);
             if (btn[0].classList.contains('paused')){
               btn[0].classList.remove('paused');
               Tone.Transport.stop();

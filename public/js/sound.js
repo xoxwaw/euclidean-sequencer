@@ -1,5 +1,6 @@
 //phi
 //Feb 11
+console.log("sound.js loaded");
 document.documentElement.addEventListener('mousedown', () => {
     if (Tone.context.state !== 'running') Tone.context.resume();
 }); //fix Chrome constraints when you have to trigger to play music
@@ -72,7 +73,6 @@ function loop(time) {
             input = cycle[step];
         if (input == 1) synth.triggerAttackRelease(note, tempo, time); //play the note if the current buffer is 1
     }
-    console.log(tempo);
     activeStep(step);
     index++;
 }

@@ -1,10 +1,11 @@
 /*
 Voice Display Script
-Porter L
 
     > Control enabling or disabling voices
 
     2 / 4 / 19 : Initial commit
+    2 / 19 / 19 : Add updatePitchWrapper function for pitch changing
+    2 / 22 / 19 : Add updateColor to change color based on user input
 */
 console.log("voice_display.js loaded");
 

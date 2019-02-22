@@ -1,16 +1,15 @@
 /*
 Arrange Radial Script
-Porter L
 
     > Arrange divs in a euclidian circle in parent
 
     2 / 3 / 19 : Initial commit + add templates
     2 / 4 / 19 : Fix null error
     2 / 12 / 19 : Add connections to backend and populate all function for general
-
-Phi // NOTE: Feb12 rewrite the functions to clean up code space
+    2 / 12 / 19 : rewrite the functions to clean up code space
 */
 console.log("arrange_radial.js loaded");
+
 var dot_template = [];
 for (var i = 0; i < 3; i++){
     let template = document.createElement('div');
@@ -42,6 +41,7 @@ function populate(n,p,m){ // populate circle with n dots
     arrange(p); // call to arrange after each time the number of dots changes
   }
 }
+
 function arrange(p){ // arrange dots with euclidian spacing
   var parent = document.getElementById(p);
   var children = parent.getElementsByTagName('div');
@@ -80,4 +80,6 @@ function pulses(){
         setPulses(i);
     }
 }
+
+
 populateAll(); // on load populate with current values.

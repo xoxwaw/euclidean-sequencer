@@ -6,6 +6,7 @@ Porter L
 
     2 / 4 / 19 : Initial commit
 */
+console.log("voice_display.js loaded");
 
 var voice1 = document.getElementById('circle1');
 var voice2 = document.getElementById('circle2');

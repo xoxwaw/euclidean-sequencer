@@ -10,7 +10,7 @@ Porter L
 
 Phi // NOTE: Feb12 rewrite the functions to clean up code space
 */
-console.log("arrange_radial loaded");
+console.log("arrange_radial.js loaded");
 var dot_template = [];
 for (var i = 0; i < 3; i++){
     let template = document.createElement('div');
@@ -80,4 +80,4 @@ function pulses(){
         setPulses(i);
     }
 }
-populateAll() // on load populate with current values.
+populateAll(); // on load populate with current values.

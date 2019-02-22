@@ -4,9 +4,17 @@ body{
   width: 100%;
 
 }
-#controls{
-  height: 400px;
+/* REMOVE ALL THE OUTLINE SELECTORS */
+input::-moz-focus-inner {
+  border: 0;
 }
+button::-moz-focus-inner {
+  border: 0;
+}
+a{
+  outline: 0;
+}
+
 h1{
   font-size: 25px;
   font-family: monospace;
@@ -64,14 +72,30 @@ h3{
   height: 30px;
   border-radius: 50px;
 }
+.dot{
+
+}
 #dot1{
   border: 1px solid red;
+  transition-duration: 200ms;
 }
 #dot2{
   border: 1px solid green;
+  transition-duration: 200ms;
 }
 #dot3{
   border: 1px solid blue;
+  transition-duration: 200ms;
+}
+#dot_active{
+  border: 1px solid black;
+  background-color: white;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+}
+#controls{
+  height: 400px;
 }
 #controlbtns{
   margin-bottom: 10px;
@@ -101,6 +125,7 @@ h3{
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 5px;
+  height: 500px;
 }
 #voice1{
   border-radius: 5px;
@@ -121,4 +146,9 @@ h3{
   display:block;
   position: relative;
   margin-bottom: 40px;
+}
+#step_counter{
+  float: left;
+  width: 100%;
+  height: 20px;
 }

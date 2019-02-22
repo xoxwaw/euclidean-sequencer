@@ -49,6 +49,11 @@ function offset(seq_in, offset){//return sequence array rotated by offset value
 	let seq_out = seq_back.concat(seq_front);
 	return seq_out;
 }
+function updatePitch(pitch_code, voice_number){
+  notes[voice_number] = pitch_code;
+  // set the pitch of a specific voice. input comes from updatePitchWrapper
+  // in voice_display.js which connects to the UI.
+}
 
 
 var cycles = [makeEuclidSeq(8,6),makeEuclidSeq(8,5),makeEuclidSeq(8,3)],
@@ -59,16 +64,17 @@ Tone.Transport.scheduleRepeat(loop, tempo);
 Tone.Transport.start();
 
 function loop(time) {
-    let step = index % 8;
+    let step = index % document.getElementById("step_val").value;
+    document.getElementById("step_counter").innerHTML = step; //output step # to screen
     for (let i = 0; i < cycles.length; i++) {
         let synth = synths[i],
             note = notes[i],
             cycle = cycles[i],
             input = cycle[step];
         if (input == 1) synth.triggerAttackRelease(note, '8n', time); //play the note if the current buffer is 1
-    } //
+    }
+    activeStep(step);
     index++;
-
 }
 
 function generateBinarySequence(step, pulse){
@@ -88,4 +94,16 @@ function updateSeq(){  // call on change to update information
   // Tone.Transport.bpm.rampTo(tempo, 0.5);
   console.log(tempo);
   cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
+}
+function activeStep(current_step){ // set the active step to dot_active class
+  voices = ['circle1','circle2','circle3'];
+  for (let i = 0; i < voices.length; i++){ // iterate over i voices
+    var container = document.getElementById(voices[i]);
+    var children = container.children;
+    for (let j = 0; j < children.length; j++){ // iterate over j children of voice i
+      children[j].setAttribute('id', 'dot'+String(i+1)); // reset the class of all children in voice i
+    }
+    children[current_step].setAttribute('id', 'dot_active'); // set active step to be of different subclass
+    // this way it will be a different color.
+  }
 }

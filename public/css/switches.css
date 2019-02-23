@@ -225,13 +225,25 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .whitekey:hover{
   background-color: #aaa;
+  transition-duration: 200ms;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
 }
 .blackkey:hover{
   background-color: #333;
+  transition-duration: 200ms;
+  -webkit-box-shadow:0 0 20px black;
+  -moz-box-shadow: 0 0 20px black;
+  box-shadow:0 0 20px black;
 }
 
 .active{
   background-color: red;
+  transition-duration: 500ms;
+  -webkit-box-shadow:0 0 20px red;
+  -moz-box-shadow: 0 0 20px red;
+  box-shadow:0 0 20px red;
 }
 /*
   BUTTONS

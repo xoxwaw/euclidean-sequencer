@@ -136,7 +136,7 @@
         <%}%>
 
         $("#general_btn").click(function(){ //toggle voice1
-            <%for (var i = 1; i < numCycles; i ++){%>
+            <%for (var i = 1; i < numCycles +1; i ++){%>
                 $("#voice<%=i%>").slideUp();
             <%}%>
             $("#general").slideDown();

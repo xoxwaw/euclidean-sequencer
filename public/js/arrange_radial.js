@@ -46,7 +46,7 @@ function arrange(p){ // arrange dots with euclidian spacing
   var parent = document.getElementById(p);
   var children = parent.getElementsByTagName('div');
   var rad = parent.clientWidth / 2;
-  var radial_dist = 360 / children.length;
+  var radial_dist = -360 / children.length;
   for (var x = 0; x < children.length; x++){
     var dist_degree = radial_dist * x;
     var dist_radian = dist_degree * (Math.PI / 180);

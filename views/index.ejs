@@ -5,6 +5,7 @@
         <title>Euclidian Sequencer</title>
         <link rel="stylesheet" type="text/css" href="css/switches.css" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/dot_colors.css" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
@@ -59,6 +60,18 @@
                     <div class="blackkey" onclick="updatePitchWrapper(this,10,0)"><p>A#</p></div>
                     <div class="whitekey" onclick="updatePitchWrapper(this,11,0)"><p>B</p></div>
                 </div>
+                Pick Wave type:
+                <select>
+                  <option value="sine">Sine</option>
+                  <option value="saw">Saw</option>
+                  <option value="square">Square</option>
+                  <option value="triangle">Triangle</option>
+                </select></br></br>
+                <input type="color" id="voice_color" name="voice_color"
+                     value="#e66465"
+                     onchange="updateColor(this.value, <%=i%>)"
+                     >
+                <label for="voice_color">Pulse Color</label>
                 <div class="onoffswitch">
                   <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="voice<%=i%>switch"
                     onchange="voiceToggle(this, 'circle<%=i%>')" checked>

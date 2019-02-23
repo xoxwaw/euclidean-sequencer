@@ -1,10 +1,11 @@
 /*
 Voice Display Script
-Porter L
 
     > Control enabling or disabling voices
 
     2 / 4 / 19 : Initial commit
+    2 / 19 / 19 : Add updatePitchWrapper function for pitch changing
+    2 / 22 / 19 : Add updateColor to change color based on user input
 */
 console.log("voice_display.js loaded");
 
@@ -34,4 +35,9 @@ function updatePitchWrapper(elem, pitch_num, voice_index){
     }
     elem.classList.add('active');
   }
+}
+
+function updateColor(color, dot_index){
+  document.styleSheets[3].cssRules[dot_index - 1].style.borderColor = color; // change color of dot by voice number
+  document.styleSheets[3].cssRules[dot_index + 2].style.color = color; // change color of voice tab by voice number
 }

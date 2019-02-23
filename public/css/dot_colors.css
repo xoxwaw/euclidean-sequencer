@@ -1,0 +1,24 @@
+/*
+  DOT COLORS
+
+  This file is seperate so that it is easier to modify the rules in JS
+*/
+
+#dot1{
+  border: 1px solid red;
+}
+#dot2{
+  border: 1px solid green;
+}
+#dot3{
+  border: 1px solid blue;
+}
+#v1_btn{
+  color: black;
+}
+#v2_btn{
+  color: black;
+}
+#v3_btn{
+  color: black;
+}

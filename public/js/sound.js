@@ -66,8 +66,8 @@ function updateDisplay(){
             children_voice[i].style.display = "none";
             document.getElementById("circle"+i).style.display = "none";
         }else{
-            children_voice[i].style.display = "block";
-            document.getElementById("circle"+i).style.display = "block";
+            children_voice[i].style.display = "inline-block";
+            document.getElementById("circle"+i).style.display = "inline-block";
         }
     }
 }

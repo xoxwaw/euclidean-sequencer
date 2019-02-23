@@ -30,17 +30,26 @@
             <%}%>
           </div>
           <div id='general'>
-            <div id='general_a'>
-              <div class="inline_a" id="voice_amount">
-                <button onclick="removeVoice()" style="display: inline;">-</button>
-                3
-                <button onclick="addVoice()" style="display: inline;">+</button>
-              </div>
-              <div class="inline_a" id="playpause_container">
-                <button class='playpause'></button>
-              </div>
-            </br>
+            <div id="playpause_container">
+              <button class='playpause'></button>
             </div>
+            </br>
+
+            <div id="voice_amount">
+              <span>NUMBER OF VOICES</br></span>
+
+              <button class="voice_button" onclick="removeVoice()" style="display: inline;">
+                <span class="voice_button_label"><strong>-</strong></span>
+              </button>
+              <strong>
+                <span id="voice_num_value">3</span>
+              </strong>
+
+              <button class="voice_button" onclick="addVoice()" style="display: inline;">
+                <span class="voice_button_label"><strong>+</strong></span>
+              </button>
+            </div>
+
             <label for="steps_num">STEPS PER MEASURE</label>
             <input type="range" id="step_val"class="slider" name="steps_num" min="1" max="16" value="1" step="1"
               oninput="populateAll()"

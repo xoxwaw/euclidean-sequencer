@@ -30,8 +30,16 @@
             <%}%>
           </div>
           <div id='general'>
-            <div id="playpause_container">
-              <button class='playpause'></button>
+            <div id='general_a'>
+              <div class="inline_a" id="voice_amount">
+                <button onclick="removeVoice()" style="display: inline;">-</button>
+                3
+                <button onclick="addVoice()" style="display: inline;">+</button>
+              </div>
+              <div class="inline_a" id="playpause_container">
+                <button class='playpause'></button>
+              </div>
+            </br>
             </div>
             <label for="steps_num">STEPS PER MEASURE</label>
             <input type="range" id="step_val"class="slider" name="steps_num" min="1" max="16" value="1" step="1"
@@ -61,7 +69,7 @@
                     <div class="whitekey" onclick="updatePitchWrapper(this,11,0)"><p>B</p></div>
                 </div>
                 Pick Wave type:
-                <select>
+                <select onchange="updateWave(this.value, <%=i%>)">
                   <option value="sine">Sine</option>
                   <option value="saw">Saw</option>
                   <option value="square">Square</option>
@@ -80,10 +88,14 @@
                     <span class="onoffswitch-switch"></span>
                   </label>
                 </div>
-                <label for="dot_num1">Pulses per measure</label>
+                <label for="dot_num<%=i%>">Pulses per measure</label>
                 <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="16" value="1" step="1"
                   oninput="populateAll()"
                   onchange="populateAll()">
+                <label for="dot_offset<%=i%>">Voice Offset</label>
+                <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="16" value="0" step="1"
+                  oninput="offsetWrapper(<%=i%>, this.value)"
+                  onchange="offsetWrapper(<%=i%>, this.value)">
               </div>
           <%}%>
         </div>

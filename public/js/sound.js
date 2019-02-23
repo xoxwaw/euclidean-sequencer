@@ -11,18 +11,19 @@ const synths = [
     new Tone.Synth()
 ]; //synth initializtion
 
-synths[0].oscillator.type = 'triangle';
-synths[1].oscillator.type = 'sine';
-synths[2].oscillator.type = 'sawtooth';
+
 
 const gain = new Tone.Gain(0.5);
 gain.toMaster(); //gain volume
 
 synths.forEach(synth => synth.connect(gain));
 
-let stepCount = 8,
-    pulseCount = 3,
-    tempo = '8n';
+let wave_type = 'sine';
+	tempo = '8n';
+
+synths[0].oscillator.type = wave_type;
+synths[1].oscillator.type = wave_type;
+synths[2].oscillator.type = wave_type;
 
 function makeEuclidSeq(steps, pulses){//euclid function
 	let seq = [];
@@ -49,6 +50,7 @@ function offset(seq_in, offset){//return sequence array rotated by offset value
 	let seq_out = seq_back.concat(seq_front);
 	return seq_out;
 }
+
 function updatePitch(pitch_code, voice_number){
   notes[voice_number] = pitch_code;
   // set the pitch of a specific voice. input comes from updatePitchWrapper
@@ -88,6 +90,11 @@ function loop(time) {
     }
     activeStep(step);
     index++;
+}
+
+function updateWave(voice,wave){
+	voice = voice - 1;
+	synths[voice].oscillator.type = wave;
 }
 
 function generateBinarySequence(step, pulse){

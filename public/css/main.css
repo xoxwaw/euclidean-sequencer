@@ -131,6 +131,19 @@ h3{
   padding: 5px;
   height: 500px;
 }
+#general_a{
+  display:inline-block;
+  width: 100%;
+  height: 100px;
+}
+.inline_a{
+  display: inline-block;
+}
+#voice_amount{
+  display: inline-block;
+  width: 50%;
+}
+
 #voice1{
   border-radius: 5px;
   margin-bottom: 20px;

@@ -22,3 +22,25 @@
 #v3_btn{
   color: black;
 }
+
+.active0{
+  background-color: red;
+  transition-duration: 500ms;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+}
+.active1{
+  background-color: red;
+  transition-duration: 500ms;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+}
+.active2{
+  background-color: red;
+  transition-duration: 500ms;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+}

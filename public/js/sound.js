@@ -5,6 +5,7 @@ document.documentElement.addEventListener('mousedown', () => {
     if (Tone.context.state !== 'running') Tone.context.resume();
 }); //fix Chrome constraints when you have to trigger to play music
 global.step_val = 1;
+global.num_cycle = 3;
 const synths = [
     new Tone.Synth(),
     new Tone.Synth(),
@@ -57,14 +58,30 @@ function updatePitch(pitch_code, voice_number){
   // in voice_display.js which connects to the UI.
 }
 
+function updateDisplay(){
+    var parent_voice = document.getElementById("controlbtns");
+    var children_voice = parent_voice.children;
+    for (var i = 1; i < children_voice.length; i++){
+        if (i > global.num_cycle){
+            children_voice[i].style.display = "none";
+            document.getElementById("circle"+i).style.display = "none";
+        }else{
+            children_voice[i].style.display = "block";
+            document.getElementById("circle"+i).style.display = "block";
+        }
+    }
+}
+
 function addVoice(){
     cycles.push(makeEuclidSeq(global.step_val,1));
     global.num_cycle += 1;
-    
+    updateDisplay()
+
 }
 function removeVoice(){
     cycles.pop();
     global.num_cycle -= 1;
+    updateDisplay();
 }
 
 var cycles = [makeEuclidSeq(1,1),makeEuclidSeq(1,1),makeEuclidSeq(1,1)],

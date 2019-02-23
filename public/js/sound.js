@@ -26,6 +26,13 @@ synths[0].oscillator.type = wave_type;
 synths[1].oscillator.type = wave_type;
 synths[2].oscillator.type = wave_type;
 
+var dist = new Tone.Distortion(0.0).toMaster();
+var vib = new Tone.Vibrato(6,0.0).toMaster();
+for (let s = 0; s < synths.length; s++){
+	synths[s].connect(dist);
+	synths[s].connect(vib);
+}
+
 function makeEuclidSeq(steps, pulses){//euclid function
 	let seq = [];
 	let x = -1;

@@ -4,7 +4,7 @@ console.log("sound.js loaded");
 document.documentElement.addEventListener('mousedown', () => {
     if (Tone.context.state !== 'running') Tone.context.resume();
 }); //fix Chrome constraints when you have to trigger to play music
-
+global.step_val = 1;
 const synths = [
     new Tone.Synth(),
     new Tone.Synth(),
@@ -55,6 +55,15 @@ function updatePitch(pitch_code, voice_number){
   // in voice_display.js which connects to the UI.
 }
 
+function addVoice(){
+    cycles.push(makeEuclidSeq(global.step_val,1));
+    global.num_cycle += 1;
+    
+}
+function removeVoice(){
+    cycles.pop();
+    global.num_cycle -= 1;
+}
 
 var cycles = [makeEuclidSeq(1,1),makeEuclidSeq(1,1),makeEuclidSeq(1,1)],
     notes = ['G5', 'E4', 'C3'];//sample sequencer
@@ -64,11 +73,10 @@ Tone.Transport.scheduleRepeat(loop, "8n");
 Tone.Transport.start();
 
 function loop(time) {
-    var step_val = 1;
     if (document.getElementById("step_val") != null){
-        step_val = document.getElementById("step_val").value;
+        global.step_val = document.getElementById("step_val").value;
     }
-    let step = index % step_val;
+    let step = index % global.step_val;
     // document.getElementById("step_counter").innerHTML = step; //output step # to screen
     for (let i = 0; i < cycles.length; i++) {
         let synth = synths[i],
@@ -93,13 +101,13 @@ function generateBinarySequence(step, pulse){
 function updateSeq(){  // call on change to update information
   var steps = 1, pulse_one = 1, pulse_two = 1, pulse_three = 1, pulses = [],cycles = [];
   if (document.getElementById("step_val")!= null){
-      steps = document.getElementById("step_val").value;
+      global.step_val = document.getElementById("step_val").value;
       for (var j = 1; j < 4; j++){
           pulses.push(document.getElementById("pulse_val_"+j).value);
       }
   }
   for (var j = 0; j < 3; j++){
-      cycles.push(makeEuclidSeq(steps,pulses[j]));
+      cycles.push(makeEuclidSeq(global.step_val,pulses[j]));
   }
   global.cycles = cycles;
   // var tempo = (document.getElementById("tempo_val").value) + 'n';

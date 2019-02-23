@@ -1,10 +1,11 @@
 const express = require('express');
 var path = require('path');
 const app = express();
+global.num_cycle = 3;
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
     res.render("index",{
-        numCycles: 3
+        numCycles: global.num_cycle
     })
     // res.sendFile(path.join(__dirname + '/index.html'));
 });

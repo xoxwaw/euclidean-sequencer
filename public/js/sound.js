@@ -61,6 +61,7 @@ function updatePitch(pitch_code, voice_number){
 function updateDisplay(){
     var parent_voice = document.getElementById("controlbtns");
     var children_voice = parent_voice.children;
+    document.getElementById("voice_num_value").innerHTML = String(global.num_cycle);
     for (var i = 1; i < children_voice.length; i++){
         if (i > global.num_cycle){
             children_voice[i].style.display = "none";
@@ -89,7 +90,7 @@ var cycles = [makeEuclidSeq(1,1),makeEuclidSeq(1,1),makeEuclidSeq(1,1)],
 let index = 0;
 
 Tone.Transport.scheduleRepeat(loop, "8n");
-Tone.Transport.start();
+//Tone.Transport.start();
 
 function loop(time) {
     if (document.getElementById("step_val") != null){

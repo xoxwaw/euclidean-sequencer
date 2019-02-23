@@ -109,7 +109,7 @@ function loop(time) {
     index++;
 }
 
-function updateWave(voice,wave){
+function updateWave(wave,voice){
 	voice = voice - 1;
 	synths[voice].oscillator.type = wave;
 }

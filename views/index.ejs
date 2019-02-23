@@ -30,17 +30,26 @@
             <%}%>
           </div>
           <div id='general'>
-            <div id='general_a'>
-              <div class="inline_a" id="voice_amount">
-                <button onclick="removeVoice()" style="display: inline;">-</button>
-                3
-                <button onclick="addVoice()" style="display: inline;">+</button>
-              </div>
-              <div class="inline_a" id="playpause_container">
-                <button class='playpause'></button>
-              </div>
-            </br>
+            <div id="playpause_container">
+              <button class='playpause'></button>
             </div>
+            </br>
+
+            <div id="voice_amount">
+              <span>NUMBER OF VOICES</br></span>
+
+              <button class="voice_button" onclick="removeVoice()" style="display: inline;">
+                <span class="voice_button_label"><strong>-</strong></span>
+              </button>
+              <strong>
+                <span id="voice_num_value">3</span>
+              </strong>
+
+              <button class="voice_button" onclick="addVoice()" style="display: inline;">
+                <span class="voice_button_label"><strong>+</strong></span>
+              </button>
+            </div>
+
             <label for="steps_num">STEPS PER MEASURE</label>
             <input type="range" id="step_val"class="slider" name="steps_num" min="1" max="16" value="1" step="1"
               oninput="populateAll()"
@@ -51,52 +60,22 @@
               oninput=""
               onchange="">
           </div>
-          <div id ="voice">
-              <%for (var i = 1; i < numCycles+1;i++){ %>
-                <div id="voice<%=i%>">
-                  <h3>Voice <%=i%></h3>
-                  <div class='keyboard'>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,0,0)"><p>C</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,1,0)"><p>C#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,2,0)"><p>D</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,3,0)"><p>D#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,4,0)"><p>E</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,5,0)"><p>F</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,6,0)"><p>F#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,7,0)"><p>G</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,8,0)"><p>G#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,9,0)"><p>A</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,10,0)"><p>A#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,11,0)"><p>B</p></div>
-                  </div>
-                  Pick Wave type:
-                  <select onchange="updateWave(this.value, <%=i%>)">
-                    <option value="sine">Sine</option>
-                    <option value="saw">Saw</option>
-                    <option value="square">Square</option>
-                    <option value="triangle">Triangle</option>
-                  </select></br></br>
-                  <input type="color" id="voice_color" name="voice_color"
-                       value="#e66465"
-                       onchange="updateColor(this.value, <%=i%>)"
-                       >
-                  <label for="voice_color">Pulse Color</label>
-                  <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="voice<%=i%>switch"
-                      onchange="voiceToggle(this, 'circle<%=i%>')" checked>
-                    <label class="onoffswitch-label" for="voice1switch">
-                      <span class="onoffswitch-inner"></span>
-                      <span class="onoffswitch-switch"></span>
-                    </label>
-                  </div>
-                  <label for="dot_num<%=i%>">Pulses per measure</label>
-                  <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="16" value="1" step="1"
-                    oninput="populateAll()"
-                    onchange="populateAll()">
-                  <label for="dot_offset<%=i%>">Voice Offset</label>
-                  <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="16" value="0" step="1"
-                    oninput="offsetWrapper(<%=i%>, this.value)"
-                    onchange="offsetWrapper(<%=i%>, this.value)">
+            <%for (var i = 1; i < numCycles+1;i++){ %>
+              <div id="voice<%=i%>">
+                <h3>Voice <%=i%></h3>
+                <div class='keyboard'>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,0,<%=i%>)"><p>C</p></div>
+                    <div class="blackkey" onclick="updatePitchWrapper(this,1,<%=i%>)"><p>C#</p></div>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,2,<%=i%>)"><p>D</p></div>
+                    <div class="blackkey" onclick="updatePitchWrapper(this,3,<%=i%>)"><p>D#</p></div>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,4,<%=i%>)"><p>E</p></div>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,5,<%=i%>)"><p>F</p></div>
+                    <div class="blackkey" onclick="updatePitchWrapper(this,6,<%=i%>)"><p>F#</p></div>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,7,<%=i%>)"><p>G</p></div>
+                    <div class="blackkey" onclick="updatePitchWrapper(this,8,<%=i%>)"><p>G#</p></div>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,9,<%=i%>)"><p>A</p></div>
+                    <div class="blackkey" onclick="updatePitchWrapper(this,10,<%=i%>)"><p>A#</p></div>
+                    <div class="whitekey" onclick="updatePitchWrapper(this,11,<%=i%>)"><p>B</p></div>
                 </div>
             <%}%>
           </div>

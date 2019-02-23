@@ -14,13 +14,13 @@
   border: 1px solid blue;
 }
 #v1_btn{
-  color: black;
+  background-color: lightgray;
 }
 #v2_btn{
-  color: black;
+  background-color: lightgray;
 }
 #v3_btn{
-  color: black;
+  background-color: lightgray;
 }
 
 .active0{

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /* REMOVE ALL THE OUTLINE SELECTORS */
 input::-moz-focus-inner {
   border: 0;
@@ -12,6 +14,7 @@ a{
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -22,19 +25,19 @@ body{
 }
 h1{
   font-size: 25px;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   text-shadow: 2px 2px 4px #555555;
   text-align: center;
 }
 h2{
-  font-size: 10px;
-  font-family: monospace;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
   text-shadow: 1px 1px 2px #555555;
   text-align: center;
 }
 h3{
   font-size: 15px;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 #circle1{
   margin-left: 150px;
@@ -116,7 +119,7 @@ h3{
   top:0;
   left: 0;
   margin-right: 50px;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 #vis_container{
   position:absolute;
@@ -132,7 +135,7 @@ h3{
   height: 500px;
 }
 #voice_amount{
-  width: 45%;
+  width: 100%;
   margin-bottom: 20px;
 }
 

@@ -24,9 +24,9 @@
           <h1><u>Euclidian Sequencer</u></h1>
           <h2>Ethan Rountree, Phi Nguyen, Porter Libby</h2>
           <div id='controlbtns'>
-            <button id="general_btn" class='btn_control' type="button">General</button>
+            <button id="general_btn" class='btn_control1' type="button">General</button>
             <%for (var i = 1; i < numCycles+1; i++){%>
-                <button id="v<%=i%>_btn" class='btn_control' type="button" >Voice<%=i%></button>
+                <button id="v<%=i%>_btn" class='btn_control2' type="button" ><%=i%></button>
             <%}%>
           </div>
           <div id='general'>
@@ -64,18 +64,42 @@
               <div id="voice<%=i%>">
                 <h3>Voice <%=i%></h3>
                   <div class='keyboard'>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,0,<%=i%>)"><p>C</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,1,<%=i%>)"><p>C#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,2,<%=i%>)"><p>D</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,3,<%=i%>)"><p>D#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,4,<%=i%>)"><p>E</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,5,<%=i%>)"><p>F</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,6,<%=i%>)"><p>F#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,7,<%=i%>)"><p>G</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,8,<%=i%>)"><p>G#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,9,<%=i%>)"><p>A</p></div>
-                      <div class="blackkey" onclick="updatePitchWrapper(this,10,<%=i%>)"><p>A#</p></div>
-                      <div class="whitekey" onclick="updatePitchWrapper(this,11,<%=i%>)"><p>B</p></div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,0,<%=i%>)">
+                        <p class="key_label">C</p>
+                      </div>
+                      <div class="blackkey" onclick="updatePitchWrapper(this,1,<%=i%>)">
+                        <p class="key_label">C#</p>
+                      </div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,2,<%=i%>)">
+                        <p class="key_label">D</p>
+                      </div>
+                      <div class="blackkey" onclick="updatePitchWrapper(this,3,<%=i%>)">
+                        <p class="key_label">D#</p>
+                      </div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,4,<%=i%>)">
+                        <p class="key_label">E</p>
+                      </div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,5,<%=i%>)">
+                        <p class="key_label">F</p>
+                      </div>
+                      <div class="blackkey" onclick="updatePitchWrapper(this,6,<%=i%>)">
+                        <p class="key_label">F#</p>
+                      </div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,7,<%=i%>)">
+                        <p class="key_label">G</p>
+                      </div>
+                      <div class="blackkey" onclick="updatePitchWrapper(this,8,<%=i%>)">
+                        <p class="key_label">G#</p>
+                      </div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,9,<%=i%>)">
+                        <p class="key_label">A</p>
+                      </div>
+                      <div class="blackkey" onclick="updatePitchWrapper(this,10,<%=i%>)">
+                        <p class="key_label">A#</p>
+                      </div>
+                      <div class="whitekey" onclick="updatePitchWrapper(this,11,<%=i%>)">
+                        <p class="key_label">B</p>
+                      </div>
                   </div>
                   Pick Wave type:
                   <select onchange="updateWave(this.value, <%=i%>)">

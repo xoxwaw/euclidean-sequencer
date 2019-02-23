@@ -61,7 +61,7 @@
                     <div class="whitekey" onclick="updatePitchWrapper(this,11,0)"><p>B</p></div>
                 </div>
                 Pick Wave type:
-                <select>
+                <select onchange="updateWave(this.value, <%=i%>)">
                   <option value="sine">Sine</option>
                   <option value="saw">Saw</option>
                   <option value="square">Square</option>
@@ -80,10 +80,14 @@
                     <span class="onoffswitch-switch"></span>
                   </label>
                 </div>
-                <label for="dot_num1">Pulses per measure</label>
+                <label for="dot_num<%=i%>">Pulses per measure</label>
                 <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="16" value="1" step="1"
                   oninput="populateAll()"
                   onchange="populateAll()">
+                <label for="dot_offset<%=i%>">Voice Offset</label>
+                <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="16" value="0" step="1"
+                  oninput="offsetWrapper(<%=i%>, this.value)"
+                  onchange="offsetWrapper(<%=i%>, this.value)">
               </div>
           <%}%>
         </div>

@@ -131,8 +131,12 @@
                   <option value="triangle">Triangle</option>
                 </select></br></br>
                 <label for="voice_color">Pulse Color</label>
+                <%
+                  var color_array = ['','#D87474','#9ADB8F','#8C90DF'];
+                  var color = color_array[i];
+                %>
                 <input type="color" id="voice_color" name="voice_color"
-                     value="white"
+                     value="<%=color%>"
                      onchange="updateColor(this.value, <%=i%>)"></br>
                 <label id="pulse_label_<%=i%>"for="dot_num<%=i%>">Pulses Per Measure</label>
                 <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="16" value="1" step="1"

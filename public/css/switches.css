@@ -271,13 +271,17 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /*
-  PIANO RADIO BUTTONS
+  KEYBOARD
 */
 .keyboard{
   display: inline-block;
+  position: absolute;
+  z-index: 1;
+  margin-top: -5px;
   height: 100px;
   width: 100%;
   margin-left: 5px;
+  margin-bottom: 100px;
 }
 .whitekey{
   background-color: white;

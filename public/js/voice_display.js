@@ -24,8 +24,10 @@ function voiceToggle(s,p){
 }
 
 function updatePitchWrapper(elem, pitch_num, voice_index){
-  pitch_codes = ['C5','C#5','D5','D#5','E5','F5','F#5','G5','G#5','A5','A#5','B5']
-  updatePitch(pitch_codes[pitch_num], voice_index - 1);  //call to sound.js to change note in voice
+  pitch_codes = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+  octave_code = document.getElementById("octave_" + String(voice_index)).value;
+  pitch_out = pitch_codes[pitch_num] + String(octave_code);
+  updatePitch(pitch_out, voice_index - 1);  //call to sound.js to change note in voice
   // update keyboard to display choice
   if (elem.classList.contains('active') == false){
     var container = elem.parentElement;
@@ -35,6 +37,13 @@ function updatePitchWrapper(elem, pitch_num, voice_index){
     }
     elem.classList.add('active' + String(voice_index - 1));
   }
+}
+
+function updatePulseLabel(id, value){
+  document.getElementById(id).innerHTML = "Pulses Per Measure ( " + String(value) + " )";
+}
+function updateStepLabel(id,value){
+  document.getElementById(id).innerHTML = "Steps Per Measure ( " + String(value) + " )";
 }
 
 function updateColor(color, dot_index){

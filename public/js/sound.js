@@ -74,15 +74,18 @@ function updateDisplay(){
 }
 
 function addVoice(){
+  if (cycles.length < 6){
     cycles.push(makeEuclidSeq(global.step_val,1));
     global.num_cycle += 1;
     updateDisplay()
-
+  }
 }
 function removeVoice(){
+  if (cycles.length > 1){
     cycles.pop();
     global.num_cycle -= 1;
     updateDisplay();
+  }
 }
 
 var cycles = [makeEuclidSeq(1,1),makeEuclidSeq(1,1),makeEuclidSeq(1,1)],

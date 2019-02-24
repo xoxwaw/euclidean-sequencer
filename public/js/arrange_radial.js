@@ -81,5 +81,6 @@ function pulses(){
     }
 }
 
-
-populateAll(); // on load populate with current values.
+window.onload = function () { // once page is loaded, run initial populate
+  populateAll(); // on load populate with current values.
+}

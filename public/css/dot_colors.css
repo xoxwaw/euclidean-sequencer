@@ -14,13 +14,13 @@
   border: 1px solid blue;
 }
 #v1_btn{
-  color: black;
+  background-color: lightgray;
 }
 #v2_btn{
-  color: black;
+  background-color: lightgray;
 }
 #v3_btn{
-  color: black;
+  background-color: lightgray;
 }
 
 .active0{
@@ -31,14 +31,14 @@
   box-shadow:0 0 20px white;
 }
 .active1{
-  background-color: red;
+  background-color: green;
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active2{
-  background-color: red;
+  background-color: blue;
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;

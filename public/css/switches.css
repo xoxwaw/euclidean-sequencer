@@ -162,92 +162,53 @@ input[type=range]:focus::-ms-fill-upper {
 /*
   BUTTONS
 */
-.btn_control {
+.btn_control1 {
 	background-color:#b3b3b3;
-	-moz-border-radius:16px;
-	-webkit-border-radius:16px;
 	border-radius:4px;
 	border:2px solid #ffffff;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Courier New;
+	color:black;
+	font-family: 'Montserrat', sans-serif;
 	font-size:15px;
 	padding:2px 4px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
+  height: 30px;
+  margin-right: 1px;
 }
-.btn_control:hover {
-	background-color:#474747;
+.btn_control1:hover {
+	color: lightgray;
 }
-.btn_control:active {
+.btn_control1:active {
 	position:relative;
 	top:1px;
 }
 
-
-/*
-  PIANO RADIO BUTTONS
-*/
-.keyboard{
-  display: inline-block;
-  height: 100px;
-  width: 100%;
-  margin-left: 5px;
+.btn_control2 {
+	background-color:#b3b3b3;
+	border-radius:20px;
+	border:2px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family: 'Montserrat', sans-serif;
+	font-size:15px;
+	padding:2px 4px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  width: 30px;
+  height: 30px;
+  margin-right: 1px;
 }
-.whitekey{
-  background-color: white;
-  font-size: 10px;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid black;
-  float:left;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-
-  width: 25px;
-  height: 50px;
-  color: black;
+.btn_control2:hover {
+	color: lightgray;
 }
-.blackkey{
-  background-color: black;
-  font-size: 10px;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid black;
-  float: left;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-
-  width: 20px;
-  height: 45px;
-  color: white;
-}
-.whitekey:hover{
-  background-color: #aaa;
-  transition-duration: 200ms;
-  -webkit-box-shadow:0 0 20px white;
-  -moz-box-shadow: 0 0 20px white;
-  box-shadow:0 0 20px white;
-}
-.blackkey:hover{
-  background-color: #333;
-  transition-duration: 200ms;
-  -webkit-box-shadow:0 0 20px black;
-  -moz-box-shadow: 0 0 20px black;
-  box-shadow:0 0 20px black;
+.btn_control2:active {
+	position:relative;
+	top:1px;
 }
 
-.active{
-  background-color: red;
-  transition-duration: 500ms;
-  -webkit-box-shadow:0 0 20px red;
-  -moz-box-shadow: 0 0 20px red;
-  box-shadow:0 0 20px red;
-}
-/*
-  BUTTONS
-*/
 #playpause_container{
   width: 40px;
   height: 40px;
@@ -259,8 +220,6 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 5px;
   border: 3px solid white;
   outline: 0;
-
-
 }
 .playpause {
   border: 0;
@@ -309,4 +268,67 @@ input[type=range]:focus::-ms-fill-upper {
 .voice_button_label{
   font-size: 25px;
   color: black;
+}
+
+/*
+  PIANO RADIO BUTTONS
+*/
+.keyboard{
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  margin-left: 5px;
+}
+.whitekey{
+  background-color: white;
+  font-size: 10px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid black;
+  float:left;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  width: 25px;
+  height: 50px;
+  color: black;
+}
+.blackkey{
+  background-color: black;
+  font-size: 10px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid black;
+  float: left;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  width: 20px;
+  height: 45px;
+  color: white;
+}
+.key_label{
+  font-size: 14px;
+}
+.whitekey:hover{
+  background-color: #aaa;
+  transition-duration: 50ms;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+}
+.blackkey:hover{
+  background-color: #333;
+  transition-duration: 50ms;
+  -webkit-box-shadow:0 0 20px black;
+  -moz-box-shadow: 0 0 20px black;
+  box-shadow:0 0 20px black;
+}
+
+.active{
+  background-color: red;
+  transition-duration: 500ms;
+  -webkit-box-shadow:0 0 20px red;
+  -moz-box-shadow: 0 0 20px red;
+  box-shadow:0 0 20px red;
 }

@@ -36,8 +36,12 @@ h2{
   text-align: center;
 }
 h3{
-  font-size: 15px;
+  font-size: 20px;
+  color: black;
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
+  margin-top:10px;
+  text-shadow: 0px 2px 1px rgba(255,255,255,.3); /* 50% white from bottom */
 }
 #circle1{
   margin-left: 150px;
@@ -71,10 +75,11 @@ h3{
   position: absolute;
   width: 30px;
   height: 30px;
+  box-sizing: border-box;
   border-radius: 50px;
 }
 .dot_pulse{
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.7);
   position: absolute;
   width: 30px;
   height: 30px;
@@ -92,22 +97,29 @@ h3{
   transition-duration: 200ms;
 }
 #dot_active{
-  border: 1px solid black;
+  box-sizing: border-box;
+  border: 1px solid #eee;
   background-color: white;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
+#dot_active.dot_pulse{
+  box-sizing: border-box;
+  border: 5px solid #eee;
+  background-color: rgba(0,0,0,0.7);
+}
 #controls{
-  height: 400px;
+  height: 100%;
 }
 #controlbtns{
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  height: 50px;
   margin-top: 20px;
   background-color: rgba(0,0,0,0.4);
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 15px;
   padding-left: 10px;
+  border: 1px black solid;
 }
 #controls-container{
   float: left;
@@ -142,17 +154,26 @@ h3{
 #voice1{
   border-radius: 5px;
   margin-bottom: 20px;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  height: 100%;
 }
 #voice2{
   border-radius: 5px;
   margin-bottom: 20px;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  height: 100%;
 }
 #voice3{
   border-radius: 5px;
   margin-bottom: 20px;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  height: 100%;
 }
 .slider{
   display:block;
@@ -163,4 +184,37 @@ h3{
   float: left;
   width: 100%;
   height: 20px;
+}
+.voice_header{
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 5px;
+  z-index: 2;
+  width: 103.3%;
+  height: 50px;
+  margin-left:-5px;
+  margin-top: 0px;
+  background-color: #656565;
+  border-bottom: 3px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.voice_header_bg{
+  background-color: #444;
+  position: absolute;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 100%;
+  height: 55px;
+  margin-left:-5px;
+  margin-bottom: 100px;
+}
+#keyboard_wrapper{
+  height: 150px;
+}
+#wave_label{
+  position: relative;
+  margin-top: 500px;
 }

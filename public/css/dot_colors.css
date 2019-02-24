@@ -1,44 +1,47 @@
 /*
   DOT COLORS
 
-  This file is seperate so that it is easier to modify the rules in JS
+  Default values for color changing objects
 */
 
 #dot1{
-  border: 1px solid red;
+  box-sizing: border-box;
+  border: 5px solid #D87474;
 }
 #dot2{
-  border: 1px solid green;
+  box-sizing: border-box;
+  border: 5px solid #9ADB8F;
 }
 #dot3{
-  border: 1px solid blue;
+  box-sizing: border-box;
+  border: 5px solid #8C90DF;
 }
 #v1_btn{
-  background-color: lightgray;
+  background-color: #D87474;
 }
 #v2_btn{
-  background-color: lightgray;
+  background-color: #9ADB8F;
 }
 #v3_btn{
-  background-color: lightgray;
+  background-color: #8C90DF;
 }
 
 .active0{
-  background-color: red;
+  background-color: #D87474;
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active1{
-  background-color: green;
+  background-color: #9ADB8F;
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active2{
-  background-color: blue;
+  background-color: #8C90DF;
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;

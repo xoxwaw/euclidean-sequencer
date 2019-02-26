@@ -10,6 +10,9 @@ global.max_cycle = 6;
 const synths = [
     new Tone.Synth(),
     new Tone.Synth(),
+    new Tone.Synth(),
+    new Tone.Synth(),
+    new Tone.Synth(),
     new Tone.Synth()
 ]; //synth initializtion
 
@@ -153,7 +156,7 @@ function updateSeq(){  // call on change to update information
 function activeStep(current_step){ // set the active step to dot_active class
   voices = [];
   for (var i = 1; i < global.num_cycle+1; i++){
-    voices.puch("circle"+i);
+    voices.push("circle"+i);
   }
   for (let i = 0; i < voices.length; i++){ // iterate over i voices
     var container = document.getElementById(voices[i]);

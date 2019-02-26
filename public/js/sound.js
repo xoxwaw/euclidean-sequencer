@@ -5,7 +5,7 @@ document.documentElement.addEventListener('mousedown', () => {
     if (Tone.context.state !== 'running') Tone.context.resume();
 }); //fix Chrome constraints when you have to trigger to play music
 global.step_val = 1;
-global.num_cycle = 3;
+global.num_cycle = 6;
 global.max_cycle = 6;
 const synths = [
     new Tone.Synth(),
@@ -47,7 +47,7 @@ function makeEuclidSeq(steps, pulses){//euclid function
 		else {
 			seq.push(0);
 		}
-		
+
 	}
 	return seq;
 }
@@ -139,11 +139,11 @@ function updateSeq(){  // call on change to update information
   var steps = 1, pulse_one = 1, pulse_two = 1, pulse_three = 1, pulses = [],cycles = [];
   if (document.getElementById("step_val")!= null){
       global.step_val = document.getElementById("step_val").value;
-      for (var j = 1; j < 4; j++){
+      for (var j = 1; j < global.num_cycle + 1; j++){
           pulses.push(document.getElementById("pulse_val_"+j).value);
       }
   }
-  for (var j = 0; j < 3; j++){
+  for (var j = 0; j < global.num_cycle; j++){
       cycles.push(makeEuclidSeq(global.step_val,pulses[j]));
   }
   global.cycles = cycles;
@@ -151,7 +151,10 @@ function updateSeq(){  // call on change to update information
   // cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
 }
 function activeStep(current_step){ // set the active step to dot_active class
-  voices = ['circle1','circle2','circle3'];
+  voices = [];
+  for (var i = 1; i < global.num_cycle+1; i++){
+    voices.puch("circle"+i);
+  }
   for (let i = 0; i < voices.length; i++){ // iterate over i voices
     var container = document.getElementById(voices[i]);
     if (container != null){

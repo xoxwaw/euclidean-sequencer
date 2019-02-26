@@ -1,10 +1,13 @@
 /*
-This file is for all the styles for inputs and buttons.
-These are typically harder to read and more complex, so
-I have grouped them together here, to leave the rest more
-accessible.
+  SWITCHES
 
+  This file is for all the styles for inputs and buttons.
+  These are typically harder to read and more complex, so
+  I have grouped them together here, to leave the rest more
+  accessible.
 
+  In general, these things should not be changed, as they only
+  affect the styles of very specific input elements.
 */
 
 /*

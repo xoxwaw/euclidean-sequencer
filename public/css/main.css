@@ -1,6 +1,17 @@
+/*
+  MAIN
+
+  This file is for all the most common, low level, style rules.
+  These are the things that are most likely to be changed, or to
+  need to be changed.
+*/
+
+
+/* Global Font */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 /* REMOVE ALL THE OUTLINE SELECTORS */
+
 input::-moz-focus-inner {
   border: 0;
 }
@@ -10,14 +21,16 @@ button::-moz-focus-inner {
 a{
   outline: 0;
 }
-/* GENERAL STYLES */
+
+/*
+  GLOBAL SETTINGS
+  (fonts and body settings)
+*/
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat', sans-serif;
 }
-
-
 body{
   background-color: darkgray;
   height: 100%;
@@ -43,32 +56,41 @@ h3{
   margin-top:10px;
   text-shadow: 0px 2px 1px rgba(255,255,255,.3); /* 50% white from bottom */
 }
+/*
+  SEQUENCER VISUALIZATION
+  (settings for elements)
+*/
+#vis_container{
+  position:absolute;
+  left: 400px;
+}
+#step_counter{
+  float: left;
+  width: 100%;
+  height: 20px;
+}
+.circle{
+  border-radius: 300px;
+  position: absolute;
+  border: 3px dotted white;
+}
 #circle1{
   margin-left: 150px;
   margin-top: 150px;
   width: 300px;
   height: 300px;
-  border-radius: 300px;
-  position: absolute;
-  border: 3px dashed white;
 }
 #circle2{
   margin-left: 100px;
   margin-top: 100px;
   width: 400px;
   height: 400px;
-  border-radius: 300px;
-  position: absolute;
-  border: 3px dashed white;
 }
 #circle3{
   margin-left: 50px;
   margin-top: 50px;
   width: 500px;
   height: 500px;
-  border-radius: 300px;
-  position: absolute;
-  border: 3px dashed white;
 }
 .dot{
   background-color: rgba(0,0,0,0.1);
@@ -78,15 +100,6 @@ h3{
   box-sizing: border-box;
   border-radius: 50px;
 }
-.dot_pulse{
-  background-color: rgba(0,0,0,0.7);
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-}
-.dot{
-}
 #dot1{
   transition-duration: 200ms;
 }
@@ -95,6 +108,13 @@ h3{
 }
 #dot3{
   transition-duration: 200ms;
+}
+.dot_pulse{
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
 }
 #dot_active{
   box-sizing: border-box;
@@ -109,6 +129,11 @@ h3{
   border: 5px solid #eee;
   background-color: rgba(0,0,0,0.7);
 }
+
+/*
+  USER INTERFACE GENERAL
+  (settings for the layout of the UI)
+*/
 #controls{
   height: 100%;
 }
@@ -132,10 +157,6 @@ h3{
   left: 0;
   margin-right: 50px;
   font-family: 'Montserrat', sans-serif;
-}
-#vis_container{
-  position:absolute;
-  left: 400px;
 }
 #voice_color{
   margin-bottom: 20px;
@@ -179,11 +200,6 @@ h3{
   display:block;
   position: relative;
   margin-bottom: 40px;
-}
-#step_counter{
-  float: left;
-  width: 100%;
-  height: 20px;
 }
 .voice_header{
   position: relative;

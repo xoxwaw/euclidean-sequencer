@@ -39,14 +39,15 @@ function makeEuclidSeq(steps, pulses){//euclid function
 	let x = -1;
 	let y = 0;
 	for(let s =0; s < steps; s++){
-		if(y >= x+1){
+		y = y + (pulses/steps);
+		if(y > x+1){
 			x++;
 			seq.push(1);
 		}
 		else {
 			seq.push(0);
 		}
-		y = y + (pulses/steps);
+		
 	}
 	return seq;
 }

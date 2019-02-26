@@ -59,9 +59,9 @@
               onchange="populateAll()">
 
             <label for="tempo_num">TEMPO</label>
-            <input type="range" class="slider" id = "tempo_val" name="tempo_num" min="0" max="16" value="1" step="1"
+            <input type="range" class="slider" id = "tempo_val" name="tempo_num" min="60" max="240" value="120" step="1"
               oninput=""
-              onchange="">
+              onchange="updateTempo(this.value)">
           </div>
             <%for (var i = 1; i < numCycles+1;i++){ %>
               <div id="voice<%=i%>">

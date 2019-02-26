@@ -125,6 +125,10 @@ function loop(time) {
     index++;
 }
 
+function updateTempo(tempo){
+	Tone.Transport.bpm.value = tempo;
+}
+
 function updateWave(wave,voice){
 	voice = voice - 1;
 	synths[voice].oscillator.type = wave;

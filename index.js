@@ -7,7 +7,6 @@ app.get('/', function(req, res) {
     res.render("index",{
         numCycles: 3
     })
-    // res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.use(express.static(__dirname + '/public'));

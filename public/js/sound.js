@@ -158,6 +158,7 @@ function activeStep(current_step){ // set the active step to dot_active class
   for (var i = 1; i < global.num_cycle+1; i++){
     voices.push("circle"+i);
   }
+  // voices = ['circle1','circle2','circle3'];
   for (let i = 0; i < voices.length; i++){ // iterate over i voices
     var container = document.getElementById(voices[i]);
     if (container != null){

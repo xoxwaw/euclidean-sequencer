@@ -6,6 +6,7 @@ document.documentElement.addEventListener('mousedown', () => {
 }); //fix Chrome constraints when you have to trigger to play music
 global.step_val = 1;
 global.num_cycle = 3;
+global.max_cycle = 6;
 const synths = [
     new Tone.Synth(),
     new Tone.Synth(),

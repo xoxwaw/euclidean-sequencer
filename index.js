@@ -1,6 +1,6 @@
 const express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 const app = express();
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(favicon(__dirname + '/public/img/icon.ico', { maxAge: 2592000000 }));
+// app.use(favicon(__dirname + '/public/img/icon.ico', { maxAge: 2592000000 }));
 
 /*require("Tone", function(Tone){
     var synth = new Tone.MonoSynth();

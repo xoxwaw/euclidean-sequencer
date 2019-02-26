@@ -146,8 +146,8 @@
 
                 <label for="dot_offset<%=i%>">Voice Offset</label>
                 <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="16" value="0" step="1"
-                  oninput="offsetWrapper(<%=i%>, this.value)"
-                  onchange="offsetWrapper(<%=i%>, this.value)">
+                  oninput="updateOffset(<%=i%>, this.value)"
+                  onchange="updateOffset(<%=i%>, this.value)">
               </div>
             <%}%>
         </div>

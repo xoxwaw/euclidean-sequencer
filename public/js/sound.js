@@ -16,6 +16,8 @@ const synths = [
     new Tone.Synth()
 ]; //synth initializtion
 
+let offset_values = [0,0,0,0,0,0];
+
 
 
 const gain = new Tone.Gain(0.5);
@@ -124,6 +126,12 @@ function loop(time) {
     activeStep(step);
     index++;
 }
+
+function updateOffset(voice, offset){
+	offsetArray[voice-1] = offset;
+	console.log(offset);
+}
+
 
 function updateTempo(tempo){
 	Tone.Transport.bpm.value = tempo;

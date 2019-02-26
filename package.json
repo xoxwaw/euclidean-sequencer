@@ -2,6 +2,9 @@
   "name": "project1",
   "version": "1.0.0",
   "description": "midi euclidian sequencer",
+  "engines":{
+    "node": "6.11.0"  
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

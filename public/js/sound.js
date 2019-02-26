@@ -6,6 +6,7 @@ document.documentElement.addEventListener('mousedown', () => {
 }); //fix Chrome constraints when you have to trigger to play music
 global.step_val = 1;
 global.num_cycle = 3;
+global.max_cycle = 6;
 const synths = [
     new Tone.Synth(),
     new Tone.Synth(),
@@ -26,19 +27,27 @@ synths[0].oscillator.type = wave_type;
 synths[1].oscillator.type = wave_type;
 synths[2].oscillator.type = wave_type;
 
+var dist = new Tone.Distortion(0.0).toMaster();
+var vib = new Tone.Vibrato(6,0.0).toMaster();
+for (let s = 0; s < synths.length; s++){
+	synths[s].connect(dist);
+	synths[s].connect(vib);
+}
+
 function makeEuclidSeq(steps, pulses){//euclid function
 	let seq = [];
 	let x = -1;
 	let y = 0;
 	for(let s =0; s < steps; s++){
-		if(y >= x+1){
+		y = y + (pulses/steps);
+		if(y > x+1){
 			x++;
 			seq.push(1);
 		}
 		else {
 			seq.push(0);
 		}
-		y = y + (pulses/steps);
+		
 	}
 	return seq;
 }

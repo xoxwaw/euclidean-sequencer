@@ -48,6 +48,6 @@ function updateStepLabel(id,value){
 
 function updateColor(color, dot_index){
   document.styleSheets[2].cssRules[dot_index - 1].style.borderColor = color; // change color of dot by voice number
-  document.styleSheets[2].cssRules[dot_index + 2].style.backgroundColor = color; // change color of voice tab by voice number
   document.styleSheets[2].cssRules[dot_index + 5].style.backgroundColor = color; // change color of voice tab by voice number
+  document.styleSheets[2].cssRules[dot_index + 11].style.backgroundColor = color; // change color of voice tab by voice number
 }

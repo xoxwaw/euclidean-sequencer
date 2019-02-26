@@ -138,10 +138,12 @@
                 <input type="color" id="voice_color" name="voice_color"
                      value="<%=color%>"
                      onchange="updateColor(this.value, <%=i%>)"></br>
+
                 <label id="pulse_label_<%=i%>"for="dot_num<%=i%>">Pulses Per Measure</label>
                 <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="16" value="1" step="1"
                   oninput="populateAll(),updatePulseLabel('pulse_label_<%=i%>',this.value)"
                   onchange="populateAll(),updatePulseLabel('pulse_label_<%=i%>',this.value)">
+
                 <label for="dot_offset<%=i%>">Voice Offset</label>
                 <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="16" value="0" step="1"
                   oninput="offsetWrapper(<%=i%>, this.value)"

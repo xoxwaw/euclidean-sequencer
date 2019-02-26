@@ -11,7 +11,11 @@ Arrange Radial Script
 console.log("arrange_radial.js loaded");
 
 var dot_template = [];
+<<<<<<< HEAD
 for (var i = 0; i < global.num_cycle; i++){
+=======
+for (var i = 0; i < 6; i++){
+>>>>>>> b836e855c14e830bcd70ae7ef140e2bf09a99416
     let template = document.createElement('div');
     template.setAttribute('class','dot');
     template.setAttribute('id', 'dot'+String(i+1));
@@ -24,7 +28,11 @@ function populateAll(){  //change all three voices at the same time [ THIS IS TH
       n = document.getElementById("step_val").value;
   }
   updateSeq();
+<<<<<<< HEAD
   for (var i = 1; i < global.num_cycle+1; i++){
+=======
+  for (var i = 1; i < 7; i++){
+>>>>>>> b836e855c14e830bcd70ae7ef140e2bf09a99416
       populate(n, "circle"+ i, i);
   }
   pulses();
@@ -76,7 +84,7 @@ function setPulses(id){//
 }
 
 function pulses(){
-    for (var i = 0; i < 3; i++){
+    for (var i = 0; i < cycles.length; i++){
         setPulses(i);
     }
 }

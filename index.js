@@ -5,7 +5,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
     res.render("index",{
-        numCycles: 3
+        numCycles: 6
     })
     // res.sendFile(path.join(__dirname + '/index.html'));
 });

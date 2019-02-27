@@ -34,6 +34,7 @@ body{
   background-color: darkgray;
   height: 100%;
   width: 100%;
+  margin: 0px;
 }
 h1{
   font-size: 25px;
@@ -160,7 +161,7 @@ h3{
   display:inline-block;
   background-color: gray;
   width: 320px;
-  height: 100%;
+  height: 98%;
   position:absolute;
   top:0;
   left: 0;

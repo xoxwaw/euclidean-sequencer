@@ -71,7 +71,7 @@ h3{
 .circle{
   border-radius: 400px;
   position: absolute;
-  border: 3px dotted white;
+  border: 4px solid rgba(0,0,0,0.1);
 }
 #circle1{
   margin-left: 300px;

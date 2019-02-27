@@ -43,12 +43,12 @@ for (let s = 0; s < synths.length; s++){
 
 function makeEuclidSeq(steps, pulses){//euclid function
 	let seq = [];
-	let x = -1;
+	let x = 0;
 	let y = 0;
 	for(let s =0; s < steps; s++){
 		y = (((s+1)*pulses)/steps);
 		console.log(y);
-		if(y > x+1){
+		if(y > x){
 			x++;
 			seq.push(1);
 		}

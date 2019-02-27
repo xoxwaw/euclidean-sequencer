@@ -94,6 +94,7 @@ function addVoice(){
     updateDisplay()
   }
 }
+
 function removeVoice(){
   if (cycles.length > 1){
     cycles.pop();
@@ -127,9 +128,10 @@ function loop(time) {
     index++;
 }
 
-function updateOffset(voice, offset){
-	offsetArray[voice-1] = offset;
-	console.log(offset);
+function updateOffset(voice, offset_val){
+	offset_values[voice-1] = parseInt(offset_val);
+	pulse_count = document.getElementById("pulse_val_"+voice).value;
+	cycles[voice-1] = offset(makeEuclidSeq(global.step_val,pulse_count),offset_values[voice-1]);
 }
 
 
@@ -142,13 +144,6 @@ function updateWave(wave,voice){
 	synths[voice].oscillator.type = wave;
 }
 
-function generateBinarySequence(step, pulse){
-    sequence = [];
-    for (var i = 0; i < step; i++){
-        sequence[i] = (i%pulse == 0 ? 1 : 0);
-    }
-    return sequence;
-}
 
 function updateSeq(){  // call on change to update information
   var steps = 1, pulse_one = 1, pulse_two = 1, pulse_three = 1, pulses = [],cycles = [];
@@ -159,12 +154,12 @@ function updateSeq(){  // call on change to update information
       }
   }
   for (var j = 0; j < global.num_cycle; j++){
-      cycles.push(makeEuclidSeq(global.step_val,pulses[j]));
+      cycles.push(offset(makeEuclidSeq(global.step_val,pulses[j]),offset_values[j]));
   }
   global.cycles = cycles;
-  // var tempo = (document.getElementById("tempo_val").value) + 'n';
-  // cycles = [makeEuclidSeq(steps,pulse_one),makeEuclidSeq(steps,pulse_two),makeEuclidSeq(steps,pulse_three)]
-}
+ }
+
+
 function activeStep(current_step){ // set the active step to dot_active class
   voices = [];
   for (var i = 1; i < global.num_cycle+1; i++){

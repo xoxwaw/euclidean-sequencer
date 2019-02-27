@@ -32,28 +32,32 @@ synths[0].oscillator.type = wave_type;
 synths[1].oscillator.type = wave_type;
 synths[2].oscillator.type = wave_type;
 
-var dist = new Tone.Distortion(0.0).toMaster();
 var vib = new Tone.Vibrato(6,0.0).toMaster();
+var dist = new Tone.Distortion(0.0).toMaster();
+var autoFilter = new Tone.AutoFilter(5).toMaster().start();
 for (let s = 0; s < synths.length; s++){
 	synths[s].connect(dist);
 	synths[s].connect(vib);
+	synths[s].connect(autoFilter);
 }
 
 function makeEuclidSeq(steps, pulses){//euclid function
 	let seq = [];
-	let x = -1;
+	let x = 0;
 	let y = 0;
 	for(let s =0; s < steps; s++){
-		y = y + (pulses/steps);
-		if(y > x+1){
+		y = (((s+1)*pulses)/steps);
+		console.log(y);
+		if(y > x){
 			x++;
 			seq.push(1);
 		}
 		else {
 			seq.push(0);
 		}
-
+		
 	}
+	//console.log(seq);
 	return seq;
 }
 
@@ -63,6 +67,7 @@ function offset(seq_in, offset){//return sequence array rotated by offset value
 	let seq_front = seq_in.slice(0, steps - offset);
 	let seq_back = seq_in.slice(steps - offset);
 	let seq_out = seq_back.concat(seq_front);
+	//console.log(seq_out);
 	return seq_out;
 }
 

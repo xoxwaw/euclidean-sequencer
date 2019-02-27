@@ -111,11 +111,12 @@ h3{
 
 }
 .dot{
-  background-color: rgba(0,0,0,0.1);
   position: absolute;
   width: 30px;
   height: 30px;
   box-sizing: border-box;
+  border: 3px solid black;
+  background-color: rgba(0,0,0,0.0);
   border-radius: 50px;
 }
 #dot1{
@@ -128,15 +129,14 @@ h3{
   transition-duration: 200ms;
 }
 .dot_pulse{
-  background-color: rgba(0,0,0,0.7);
+  box-sizing: border-box;
+  border: 3px solid black;
   position: absolute;
   width: 30px;
   height: 30px;
   border-radius: 50px;
 }
 #dot_active{
-  box-sizing: border-box;
-  border: 1px solid #eee;
   background-color: white;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;

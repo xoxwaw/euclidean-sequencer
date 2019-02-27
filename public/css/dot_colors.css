@@ -4,29 +4,23 @@
   Default values for color changing objects
 */
 
-#dot1{
-  box-sizing: border-box;
-  border: 5px solid #FCB711;
+#dot1.dot_pulse{
+  background-color: #FCB711;
 }
-#dot2{
-  box-sizing: border-box;
-  border: 5px solid #F37021;
+#dot2.dot_pulse{
+  background-color: #F37021;
 }
-#dot3{
-  box-sizing: border-box;
-  border: 5px solid #CC004C;
+#dot3.dot_pulse{
+  background-color: #CC004C;
 }
-#dot4{
-  box-sizing: border-box;
-  border: 5px solid #6460AA;
+#dot4.dot_pulse{
+  background-color: #6460AA;
 }
-#dot5{
-  box-sizing: border-box;
-  border: 5px solid #0089D0;
+#dot5.dot_pulse{
+  background-color: #0089D0;
 }
-#dot6{
-  box-sizing: border-box;
-  border: 5px solid #0DB14B;
+#dot6.dot_pulse{
+  background-color: #0DB14B;
 }
 #v1_btn{
   background-color: #FCB711;

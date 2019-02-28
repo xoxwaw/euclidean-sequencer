@@ -323,8 +323,8 @@ input[type=range]:focus::-ms-fill-upper {
   position: relative;
   display: block;
   width: 15em;
-  height: 3em;
-  line-height: 3;
+  height: 2em;
+  line-height: 2;
   background: #2c3e50;
   overflow: hidden;
   border-radius: .25em;

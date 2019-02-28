@@ -29,6 +29,7 @@ a{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
 }
 body{
   background-color: darkgray;

@@ -112,6 +112,9 @@ h3{
 
 }
 .dot{
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0 0 1px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
   position: absolute;
   width: 30px;
   height: 30px;

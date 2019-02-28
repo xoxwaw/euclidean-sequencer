@@ -6,21 +6,39 @@
 
 #dot1.dot_pulse{
   background-color: #FCB711;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #FCB711;
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #FCB711;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #FCB711;
 }
 #dot2.dot_pulse{
   background-color: #F37021;
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #F37021;
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #F37021;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #F37021;
 }
 #dot3.dot_pulse{
   background-color: #CC004C;
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #CC004C;
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #CC004C;
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #CC004C;
 }
 #dot4.dot_pulse{
   background-color: #6460AA;
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #6460AA;
+  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,0.5), 0 0 10px #6460AA;
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #6460AA;
 }
 #dot5.dot_pulse{
   background-color: #0089D0;
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #0089D0;
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #0089D0;
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #0089D0;
 }
 #dot6.dot_pulse{
   background-color: #0DB14B;
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #0DB14B;
+  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,0.5), 0 0 10px #0DB14B;
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px #0DB14B;
 }
 #v1_btn{
   background-color: #FCB711;

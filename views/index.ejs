@@ -20,6 +20,7 @@
         <script type="text/javascript" src="js/sound.js"></script>
         <script type="text/javascript" src="js/arrange_radial.js"></script>
         <script type="text/javascript" src="js/voice_display.js"></script>
+        <script type="text/javascript" src="js/buttons.js"></script>
 
     </head>
     <body>
@@ -34,10 +35,13 @@
             <%}%>
           </div>
           <div id='general'>
-            <div id="playpause_container">
-              <button class='playpause'></button>
+            <div class='button_container' style="display: inline-block;">
+              <input onclick="buttonPlay()" type="image" src="img/play-pause.png" style="width:30px; height: 30px;"/>
             </div>
-            </br>
+            <div class='button_container' style="display: inline-block;">
+              <input onclick="buttonGit()" type="image" src="img/git-icon.png" style="width:30px; height: 30px;"/>
+            </div>
+            </br></br></br></br>
 
             <div id="voice_amount">
               <span>Number of Voices</br></span>
@@ -54,7 +58,7 @@
               </button>
             </div>
 
-            <label id="step_label" for="steps_num">Steps Per Measure</label>
+            <label id="step_label" for="steps_num">Steps Per Measure (8)</label>
             <input type="range" id="step_val"class="slider" name="steps_num" min="1" max="32" value="8" step="1"
               oninput="populateAll(),updateStepLabel('step_label',this.value)"
               onchange="populateAll()">
@@ -114,23 +118,27 @@
 
                 </div>
                 <span id='wave_label'>Octave:</span>
-                <select id="octave_<%=i%>" value="4">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option selected="selected" value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                </select></br></br>
+                <div class="select">
+                  <select id="octave_<%=i%>" value="4">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option selected="selected" value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </div></br></br>
                 <span id='wave_label'>Pick Wave type:</span>
-                <select onchange="updateWave(this.value, <%=i%>)">
-                  <option value="sine">Sine</option>
-                  <option value="sawtooth">Saw</option>
-                  <option value="square">Square</option>
-                  <option value="triangle">Triangle</option>
-                </select></br></br>
+                <div class="select">
+                  <select onchange="updateWave(this.value, <%=i%>)">
+                    <option value="sine">Sine</option>
+                    <option value="sawtooth">Saw</option>
+                    <option value="square">Square</option>
+                    <option value="triangle">Triangle</option>
+                  </select>
+                </div></br></br>
                 <label for="voice_color">Pulse Color</label>
                 <%
                   var color_array = ['','#FCB711','#F37021','#CC004C','#6460AA','#0089D0','#0DB14B'];
@@ -140,13 +148,13 @@
                      value="<%=color%>"
                      onchange="updateColor(this.value, <%=i%>)"></br>
 
-                <label id="pulse_label_<%=i%>"for="dot_num<%=i%>">Pulses Per Measure</label>
-                <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="16" value="1" step="1"
+                <label id="pulse_label_<%=i%>"for="dot_num<%=i%>">Pulses Per Measure (1)</label>
+                <input type="range" id="pulse_val_<%=i%>" class="slider" name="dot_num<%=i%>" min="0" max="32" value="1" step="1"
                   oninput="populateAll(),updatePulseLabel('pulse_label_<%=i%>',this.value)"
                   onchange="populateAll(),updatePulseLabel('pulse_label_<%=i%>',this.value)">
 
-                <label for="dot_offset<%=i%>">Voice Offset</label>
-                <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="16" value="0" step="1"
+                <label for="dot_offset<%=i%>">Voice Offset (0)</label>
+                <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="32" value="0" step="1"
                   oninput="populateAll(),updateOffset(<%=i%>, this.value)"
                   onchange="populateAll(),updateOffset(<%=i%>, this.value),populateAll()">
               </div>

@@ -227,6 +227,28 @@ input[type=range]:focus::-ms-fill-upper {
   width: 30px;
   height: 30px;
 }
+#voice_num_value{
+  font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.voice_button{
+  margin-top: 5px;
+  border: 5px solid white;
+  background-color: lightgray;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+.voice_button:hover{
+  background-color: gray;
+  border: 5px solid lightgray;
+}
+.voice_button_label{
+  font-size: 25px;
+  color: black;
+}
 
 /*
   KEYBOARD

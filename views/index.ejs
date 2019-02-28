@@ -192,20 +192,6 @@
             <%}%>
             $("#general").slideDown();
         });
-
-        $(document).ready(function() {
-          var btn = $(".playpause");
-          btn.click(function() {
-            if (btn[0].classList.contains('paused')){
-              btn[0].classList.remove('paused');
-              Tone.Transport.stop();
-            }else{
-              btn[0].classList.add('paused');
-              Tone.Transport.start();
-            }
-            return false;
-          });
-        });
       </script>
     </body>
 </html>

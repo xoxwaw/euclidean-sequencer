@@ -33,21 +33,6 @@ function updatePitchWrapper(elem, pitch_num, voice_index) {
         elem.classList.add('active' + String(voice_index - 1));
     }
 }
-
-<<<<<<< HEAD
-function updatePulseLabel(id, value) {
-    /*
-    update the label for the pulses
-    */
-    document.getElementById(id).innerHTML = "Pulses Per Measure ( " + String(value) + " )";
-}
-
-function updateStepLabel(id, value) {
-    /*
-    update the label for the step value
-    */
-    document.getElementById(id).innerHTML = "Steps Per Measure ( " + String(value) + " )";
-=======
 function updatePulseLabel(id, value){ // update the label for the pulses per measure (by voice)
   document.getElementById(id).innerHTML = "Pulses Per Measure ( " + String(value) + " )";
 }
@@ -61,11 +46,4 @@ function updateStepLabel(id,value){ // update the label for the number of steps 
 function updateColor(color, dot_index){ // updated the color for a given voice
   let root = document.documentElement;
   root.style.setProperty('--color_one', color); // change color of dot by voice number
->>>>>>> 3dcc221ba70f3d461be3a82b21ad66bccc82229c
-}
-
-function updateColor(color, dot_index) {
-    document.styleSheets[2].cssRules[dot_index - 1].style.borderColor = color; // change color of dot by voice number
-    document.styleSheets[2].cssRules[dot_index + 5].style.backgroundColor = color; // change color of voice tab by voice number
-    document.styleSheets[2].cssRules[dot_index + 11].style.backgroundColor = color; // change color of voice tab by voice number
 }

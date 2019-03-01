@@ -6,7 +6,6 @@ document.documentElement.addEventListener('mousedown', () => {
 }); //fix Chrome constraints when you have to trigger to play music
 global.step_val = 1;
 global.num_cycle = 6;
-global.max_cycle = 6;
 const synths = [
     new Tone.Synth(),
     new Tone.Synth(),
@@ -16,9 +15,7 @@ const synths = [
     new Tone.Synth()
 ]; //synth initializtion
 
-let offset_values = [0,0,0,0,0,0];
-
-
+let offset_values = [0, 0, 0, 0, 0, 0];
 
 const gain = new Tone.Gain(0.5);
 gain.toMaster(); //gain volume
@@ -26,97 +23,99 @@ gain.toMaster(); //gain volume
 synths.forEach(synth => synth.connect(gain));
 
 let wave_type = 'sine';
-	tempo = '8n';
+tempo = '8n';
 
 synths[0].oscillator.type = wave_type;
 synths[1].oscillator.type = wave_type;
 synths[2].oscillator.type = wave_type;
 
-var vib = new Tone.Vibrato(6,0.0).toMaster();
+var vib = new Tone.Vibrato(6, 0.0).toMaster();
 var dist = new Tone.Distortion(0.0).toMaster();
 var autoFilter = new Tone.AutoFilter(5).toMaster().start();
-for (let s = 0; s < synths.length; s++){
-	synths[s].connect(dist);
-	synths[s].connect(vib);
-	synths[s].connect(autoFilter);
+for (let s = 0; s < synths.length; s++) {
+    synths[s].connect(dist);
+    synths[s].connect(vib);
+    synths[s].connect(autoFilter);
 }
 
-function makeEuclidSeq(steps, pulses){//euclid function
-	let seq = [];
-	let x = 0;
-	let y = 0;
-	for(let s =0; s < steps; s++){
-		y = (((s+1)*pulses)/steps);
-		console.log(y);
-		if(y > x){
-			x++;
-			seq.push(1);
-		}
-		else {
-			seq.push(0);
-		}
-		
-	}
-	//console.log(seq);
-	return seq;
+function makeEuclidSeq(steps, pulses) {
+    /*
+    function takes a step and a pulse as input
+    return an array of binary values with Euclidean rules
+    */
+    let seq = [];
+    let x = 0;
+    let y = 0;
+    for (let s = 0; s < steps; s++) {
+        y = (((s + 1) * pulses) / steps);
+        console.log(y);
+        if (y > x) {
+            x++;
+            seq.push(1);
+        } else {
+            seq.push(0);
+        }
+
+    }
+    return seq;
 }
 
-function offset(seq_in, offset){//return sequence array rotated by offset value
-	steps = seq_in.length;
-	offset = offset % steps; //fix if offset is longer than sequence
-	let seq_front = seq_in.slice(0, steps - offset);
-	let seq_back = seq_in.slice(steps - offset);
-	let seq_out = seq_back.concat(seq_front);
-	//console.log(seq_out);
-	return seq_out;
+function offset(seq_in, offset) { //return sequence array rotated by offset value
+    steps = seq_in.length;
+    offset = offset % steps; //fix if offset is longer than sequence
+    let seq_front = seq_in.slice(0, steps - offset);
+    let seq_back = seq_in.slice(steps - offset);
+    let seq_out = seq_back.concat(seq_front);
+    //console.log(seq_out);
+    return seq_out;
 }
 
-function updatePitch(pitch_code, voice_number){
-  notes[voice_number] = pitch_code;
-  // set the pitch of a specific voice. input comes from updatePitchWrapper
-  // in voice_display.js which connects to the UI.
+function updatePitch(pitch_code, voice_number) {
+    notes[voice_number] = pitch_code;
+    // set the pitch of a specific voice. input comes from updatePitchWrapper
+    // in voice_display.js which connects to the UI.
 }
 
-function updateDisplay(){
+function updateDisplay() {
     var parent_voice = document.getElementById("controlbtns");
     var children_voice = parent_voice.children;
     document.getElementById("voice_num_value").innerHTML = String(global.num_cycle);
-    for (var i = 1; i < children_voice.length; i++){
-        if (i > global.num_cycle){
+    for (var i = 1; i < children_voice.length; i++) {
+        if (i > global.num_cycle) {
             children_voice[i].style.display = "none";
-            document.getElementById("circle"+i).style.display = "none";
-        }else{
+            document.getElementById("circle" + i).style.display = "none";
+        } else {
             children_voice[i].style.display = "inline-block";
-            document.getElementById("circle"+i).style.display = "inline-block";
+            document.getElementById("circle" + i).style.display = "inline-block";
         }
     }
 }
 
-function addVoice(){
-  if (cycles.length < 6){
-    cycles.push(makeEuclidSeq(global.step_val,1));
-    global.num_cycle += 1;
-    updateDisplay()
-  }
+function addVoice() {
+    if (cycles.length < 6) {
+        cycles.push(makeEuclidSeq(global.step_val, 1));
+        global.num_cycle += 1;
+        updateDisplay()
+    }
 }
 
-function removeVoice(){
-  if (cycles.length > 1){
-    cycles.pop();
-    global.num_cycle -= 1;
-    updateDisplay();
-  }
+function removeVoice() {
+    if (cycles.length > 1) {
+        cycles.pop();
+        global.num_cycle -= 1;
+        updateDisplay();
+    }
 }
 
-var cycles = [makeEuclidSeq(1,1),makeEuclidSeq(1,1),makeEuclidSeq(1,1)],
-    notes = ['G5', 'E4', 'C3'];//sample sequencer
+var cycles = [makeEuclidSeq(1, 1), makeEuclidSeq(1, 1), makeEuclidSeq(1, 1)],
+    notes = ['G5', 'E4', 'C3']; //sample sequencer
 let index = 0;
 
 Tone.Transport.scheduleRepeat(loop, "8n");
 //Tone.Transport.start();
 
 function loop(time) {
-    if (document.getElementById("step_val") != null){
+    if (document.getElementById("step_val") != null) {
         global.step_val = document.getElementById("step_val").value;
     }
     let step = index % global.step_val;
@@ -133,53 +132,67 @@ function loop(time) {
     index++;
 }
 
-function updateOffset(voice, offset_val){
-	offset_values[voice-1] = parseInt(offset_val);
-	pulse_count = document.getElementById("pulse_val_"+voice).value;
-	cycles[voice-1] = offset(makeEuclidSeq(global.step_val,pulse_count),offset_values[voice-1]);
+function updateOffset(voice, offset_val) {
+    /*
+    update the offset (increase/decrease the starting point of a sequence)
+    */
+    offset_values[voice - 1] = parseInt(offset_val);
+    pulse_count = document.getElementById("pulse_val_" + voice).value;
+    cycles[voice - 1] = offset(makeEuclidSeq(global.step_val, pulse_count), offset_values[voice - 1]);
 }
 
 
-function updateTempo(tempo){
-	Tone.Transport.bpm.value = tempo;
+function updateTempo(tempo) {
+    Tone.Transport.bpm.value = tempo;
 }
 
-function updateWave(wave,voice){
-	voice = voice - 1;
-	synths[voice].oscillator.type = wave;
+function updateWave(wave, voice) {
+    voice = voice - 1;
+    synths[voice].oscillator.type = wave;
 }
 
 
-function updateSeq(){  // call on change to update information
-  var steps = 1, pulse_one = 1, pulse_two = 1, pulse_three = 1, pulses = [],cycles = [];
-  if (document.getElementById("step_val")!= null){
-      global.step_val = document.getElementById("step_val").value;
-      for (var j = 1; j < global.num_cycle + 1; j++){
-          pulses.push(document.getElementById("pulse_val_"+j).value);
-      }
-  }
-  for (var j = 0; j < global.num_cycle; j++){
-      cycles.push(offset(makeEuclidSeq(global.step_val,pulses[j]),offset_values[j]));
-  }
-  global.cycles = cycles;
- }
-
-
-function activeStep(current_step){ // set the active step to dot_active class
-  voices = [];
-  for (var i = 1; i < global.num_cycle+1; i++){
-    voices.push("circle"+i);
-  }
-  // voices = ['circle1','circle2','circle3'];
-  for (let i = 0; i < voices.length; i++){ // iterate over i voices
-    var container = document.getElementById(voices[i]);
-    if (container != null){
-        var children = container.children;
-        for (let j = 0; j < children.length; j++){ // iterate over j children of voice i
-          children[j].setAttribute('id', 'dot'+String(i+1)); // reset the class of all children in voice i
+function updateSeq() {
+    /*
+    update the pulses, sound, and steps, called from the front end.
+    */
+    var steps = 1,
+        pulse_one = 1,
+        pulse_two = 1,
+        pulse_three = 1,
+        pulses = [],
+        cycles = [];
+    if (document.getElementById("step_val") != null) {
+        global.step_val = document.getElementById("step_val").value;
+        for (var j = 1; j < global.num_cycle + 1; j++) {
+            pulses.push(document.getElementById("pulse_val_" + j).value);
         }
-        children[current_step].setAttribute('id', 'dot_active'); // set active step to be of different subclass
-        // this way it will be a different color.
     }
-  }
+    for (var j = 0; j < global.num_cycle; j++) {
+        cycles.push(offset(makeEuclidSeq(global.step_val, pulses[j]), offset_values[j]));
+    }
+    global.cycles = cycles;//2d array stores arrays of binary values
+}
+
+
+function activeStep(current_step) {
+    /*
+    set the active step(while playing) to dot_active class
+    */
+    voices = [];
+    for (var i = 1; i < global.num_cycle + 1; i++) {
+        voices.push("circle" + i);
+    }
+    // voices = ['circle1','circle2','circle3'];
+    for (let i = 0; i < voices.length; i++) { // iterate over i voices
+        var container = document.getElementById(voices[i]);
+        if (container != null) {
+            var children = container.children;
+            for (let j = 0; j < children.length; j++) { // iterate over j children of voice i
+                children[j].setAttribute('id', 'dot' + String(i + 1)); // reset the class of all children in voice i
+            }
+            children[current_step].setAttribute('id', 'dot_active'); // set active step to be of different subclass
+            // this way it will be a different color.
+        }
+    }
 }

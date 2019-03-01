@@ -1,9 +1,7 @@
 // Functions for play and link buttons
 
-var paused = true;
-
-function buttonPlay(){
-  console.log('play button press');
+var paused = true;  // in the default state the app is paused
+function buttonPlay(){ // control the toggle between paused and unpaused
   if (paused == false){
     Tone.Transport.stop();
     paused = true;
@@ -13,6 +11,6 @@ function buttonPlay(){
   }
 }
 
-function buttonGit(){
+function buttonGit(){ // open the git repository for the project in new tab
   window.open('https://github.com/hungphi98/euclidean-sequencer');
 }

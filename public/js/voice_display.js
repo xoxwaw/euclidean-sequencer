@@ -34,6 +34,7 @@ function updatePitchWrapper(elem, pitch_num, voice_index) {
     }
 }
 
+<<<<<<< HEAD
 function updatePulseLabel(id, value) {
     /*
     update the label for the pulses
@@ -46,6 +47,21 @@ function updateStepLabel(id, value) {
     update the label for the step value
     */
     document.getElementById(id).innerHTML = "Steps Per Measure ( " + String(value) + " )";
+=======
+function updatePulseLabel(id, value){ // update the label for the pulses per measure (by voice)
+  document.getElementById(id).innerHTML = "Pulses Per Measure ( " + String(value) + " )";
+}
+function updateOffsetLabel(id,value){ // update the label for the number of steps (global)
+  document.getElementById(id).innerHTML = "Voice Offset ( " + String(value) + " )";
+}
+function updateStepLabel(id,value){ // update the label for the number of steps (global)
+  document.getElementById(id).innerHTML = "Steps Per Measure ( " + String(value) + " )";
+}
+
+function updateColor(color, dot_index){ // updated the color for a given voice
+  let root = document.documentElement;
+  root.style.setProperty('--color_one', color); // change color of dot by voice number
+>>>>>>> 3dcc221ba70f3d461be3a82b21ad66bccc82229c
 }
 
 function updateColor(color, dot_index) {

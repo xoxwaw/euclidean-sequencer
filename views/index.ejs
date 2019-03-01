@@ -153,10 +153,10 @@
                   oninput="populateAll(),updatePulseLabel('pulse_label_<%=i%>',this.value)"
                   onchange="populateAll(),updatePulseLabel('pulse_label_<%=i%>',this.value)">
 
-                <label for="dot_offset<%=i%>">Voice Offset (0)</label>
+                <label id="offset_label_<%=i%>" for="dot_offset<%=i%>">Voice Offset (0)</label>
                 <input type="range" id="dot_offset_<%=i%>" class="slider" name="dot_offset<%=i%>" min="0" max="32" value="0" step="1"
-                  oninput="populateAll(),updateOffset(<%=i%>, this.value)"
-                  onchange="populateAll(),updateOffset(<%=i%>, this.value),populateAll()">
+                  oninput="populateAll(),updateOffset(<%=i%>, this.value),updateOffsetLabel('offset_label_<%=i%>',this.value)"
+                  onchange="populateAll(),updateOffset(<%=i%>, this.value),updateOffsetLabel('offset_label_<%=i%>',this.value)">
               </div>
             <%}%>
         </div>
@@ -192,10 +192,6 @@
             <%}%>
             $("#general").slideDown();
         });
-        removeVoice();
-        removeVoice();
-        removeVoice();
-        removeVoice();
       </script>
     </body>
 </html>

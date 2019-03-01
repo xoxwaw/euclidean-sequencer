@@ -107,8 +107,13 @@ function removeVoice() {
     }
 }
 
+<<<<<<< HEAD
 var cycles = [makeEuclidSeq(1, 1), makeEuclidSeq(1, 1), makeEuclidSeq(1, 1)],
     notes = ['G5', 'E4', 'C3']; //sample sequencer
+=======
+var cycles = [offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1)),],
+    notes = ['C4', 'E4', 'G4','B4','D5','F5'];//load default settings
+>>>>>>> 3dcc221ba70f3d461be3a82b21ad66bccc82229c
 let index = 0;
 
 Tone.Transport.scheduleRepeat(loop, "8n");

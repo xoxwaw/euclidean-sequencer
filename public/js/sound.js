@@ -41,13 +41,13 @@ for (let s = 0; s < synths.length; s++){
 	synths[s].connect(autoFilter);
 }
 
-function makeEuclidSeq(steps, pulses){//euclid function
+function makeEuclidSeq(steps, pulses){//euclid function for distributing pulses
 	let seq = [];
 	let x = 0;
 	let y = 0;
 	for(let s =0; s < steps; s++){
 		y = (((s+1)*pulses)/steps);
-		console.log(y);
+		//console.log(y);
 		if(y > x){
 			x++;
 			seq.push(1);
@@ -108,8 +108,8 @@ function removeVoice(){
   }
 }
 
-var cycles = [makeEuclidSeq(1,1),makeEuclidSeq(1,1),makeEuclidSeq(1,1)],
-    notes = ['G5', 'E4', 'C3'];//sample sequencer
+var cycles = [offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1)),],
+    notes = ['C4', 'E4', 'G4','B4','D5','F5'];//load default settings
 let index = 0;
 
 Tone.Transport.scheduleRepeat(loop, "8n");

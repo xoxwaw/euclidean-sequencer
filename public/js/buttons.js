@@ -1,5 +1,6 @@
-var paused = true;
+// Functions for play and link buttons
 
+var paused = true;
 
 function buttonPlay(){
   console.log('play button press');
@@ -11,6 +12,7 @@ function buttonPlay(){
     paused = false;
   }
 }
+
 function buttonGit(){
   window.open('https://github.com/hungphi98/euclidean-sequencer');
 }

@@ -46,14 +46,14 @@
             <div id="voice_amount">
               <span>Number of Voices</br></span>
 
-              <button class="voice_button" onclick="removeVoice()" style="display: inline;">
+              <button class="voice_button" onclick="removeVoice(),populateAll()" style="display: inline;">
                 <span class="voice_button_label"><strong>-</strong></span>
               </button>
               <strong>
                 <span id="voice_num_value">6</span>
               </strong>
 
-              <button class="voice_button" onclick="addVoice()" style="display: inline;">
+              <button class="voice_button" onclick="addVoice(),populateAll()" style="display: inline;">
                 <span class="voice_button_label"><strong>+</strong></span>
               </button>
             </div>
@@ -192,6 +192,10 @@
             <%}%>
             $("#general").slideDown();
         });
+        removeVoice();
+        removeVoice();
+        removeVoice();
+        removeVoice();
       </script>
     </body>
 </html>

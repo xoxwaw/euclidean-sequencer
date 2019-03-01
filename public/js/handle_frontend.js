@@ -133,7 +133,8 @@ function updateStepLabel(id,value){ // update the label for the number of steps 
 
 function updateColor(color, dot_index){ // updated the color for a given voice
   let root = document.documentElement;
-  root.style.setProperty('--color_one', color); // change color of dot by voice number
+
+  root.style.setProperty('--color_' + String(dot_index), color); // change color of dot by voice number
 }
 
 // Functions for play and link buttons

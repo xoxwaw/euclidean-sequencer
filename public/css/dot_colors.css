@@ -7,106 +7,106 @@
 
 /*Define mutable vars with defaults*/
 :root{
-  --color_one: #FCB711;
-  --color_two: #F37021;
-  --color_three: #CC004C;
-  --color_four: #6460AA;
-  --color_five: #0089D0;
-  --color_six: #0DB14B;
+  --color_1: #FCB711;
+  --color_2: #F37021;
+  --color_3: #CC004C;
+  --color_4: #6460AA;
+  --color_5: #0089D0;
+  --color_6: #0DB14B;
 }
 
 #dot1.dot_pulse{
-  background-color: var(--color_one);
-  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_one);
-  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_one);
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_one);
+  background-color: var(--color_1);
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_1);
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_1);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_1);
 }
 #dot2.dot_pulse{
-  background-color: var(--color_two);
-  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_two);
-  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_two);
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_two);
+  background-color: var(--color_2);
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_2);
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_2);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_2);
 }
 #dot3.dot_pulse{
-  background-color: var(--color_three);
-  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_three);
-  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_three);
-  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_three);
+  background-color: var(--color_3);
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_3);
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_3);
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_3);
 }
 #dot4.dot_pulse{
-  background-color: var(--color_four);
-  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_four);
-  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,0.5), 0 0 10px var(--color_four);
-  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_four);
+  background-color: var(--color_4);
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_4);
+  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,0.5), 0 0 10px var(--color_4);
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_4);
 }
 #dot5.dot_pulse{
-  background-color: var(--color_five);
-  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_five);
-  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_five);
-  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_five);
+  background-color: var(--color_5);
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_5);
+  -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_5);
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_5);
 }
 #dot6.dot_pulse{
-  background-color: var(--color_six);
-  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_six);
-  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,0.5), 0 0 10px var(--color_six);
-  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_six);
+  background-color: var(--color_6);
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_6);
+  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,0.5), 0 0 10px var(--color_6);
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.5),0 0 10px var(--color_6);
 }
 #v1_btn{
-  background-color: var(--color_one);
+  background-color: var(--color_1);
 }
 #v2_btn{
-  background-color: var(--color_two);
+  background-color: var(--color_2);
 }
 #v3_btn{
-  background-color: var(--color_three);
+  background-color: var(--color_3);
 }
 #v4_btn{
-  background-color: var(--color_four);
+  background-color: var(--color_4);
 }
 #v5_btn{
-  background-color: var(--color_five);
+  background-color: var(--color_5);
 }
 #v6_btn{
-  background-color: var(--color_six);
+  background-color: var(--color_6);
 }
 
 .active0{
-  background-color: var(--color_one);
+  background-color: var(--color_1);
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active1{
-  background-color: var(--color_two);
+  background-color: var(--color_2);
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active2{
-  background-color: var(--color_three);
+  background-color: var(--color_3);
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active3{
-  background-color: var(--color_four);
+  background-color: var(--color_4);
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active4{
-  background-color: var(--color_five);
+  background-color: var(--color_5);
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;
   box-shadow:0 0 20px white;
 }
 .active5{
-  background-color: var(--color_six);
+  background-color: var(--color_6);
   transition-duration: 500ms;
   -webkit-box-shadow:0 0 20px white;
   -moz-box-shadow: 0 0 20px white;

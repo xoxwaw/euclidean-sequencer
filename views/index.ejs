@@ -33,11 +33,11 @@
             <%}%>
           </div>
           <div id='general'>
-            <div class='button_container' style="display: inline-block;">
-              <input onclick="buttonPlay()" type="image" src="img/play-pause.png" style="width:30px; height: 30px;"/>
+            <div id="play_pause_button" class='button_container' style="display: inline-block;">
+              <input class="button_image" onclick="buttonPlay()" type="image" src="img/play-pause.png" />
             </div>
             <div class='button_container' style="display: inline-block;">
-              <input onclick="buttonGit()" type="image" src="img/git-icon.png" style="width:30px; height: 30px;"/>
+              <input class="button_image" onclick="buttonGit()" type="image" src="img/git-icon.png"/>
             </div>
             </br></br></br></br>
 
@@ -61,10 +61,10 @@
               oninput="populateAll(),updateStepLabel('step_label',this.value)"
               onchange="populateAll()">
 
-            <label for="tempo_num">Global Tempo</label>
+            <label id="tempo_label" for="tempo_num">Global Tempo ( 120 BPM )</label>
             <input type="range" class="slider" id = "tempo_val" name="tempo_num" min="60" max="240" value="120" step="1"
-              oninput=""
-              onchange="updateTempo(this.value)">
+              oninput="updateTempo(this.value),updateTempoLabel('tempo_label',this.value)"
+              onchange="updateTempo(this.value),updateTempoLabel('tempo_label',this.value)">
           </div>
             <%for (var i = 1; i < numCycles+1;i++){ %>
               <div class="voice_settings" id="voice<%=i%>">

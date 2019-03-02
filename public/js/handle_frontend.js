@@ -130,6 +130,9 @@ function updateOffsetLabel(id,value){ // update the label for the number of step
 function updateStepLabel(id,value){ // update the label for the number of steps (global)
   document.getElementById(id).innerHTML = "Steps Per Measure ( " + String(value) + " )";
 }
+function updateTempoLabel(id,value){ // update the label for the number of steps (global)
+  document.getElementById(id).innerHTML = "Global Tempo ( " + String(value) + " BPM )";
+}
 
 function updateColor(color, dot_index){ // updated the color for a given voice
   let root = document.documentElement;
@@ -143,6 +146,8 @@ var paused = true;
 
 function buttonPlay() {
     console.log('play button press');
+    var playpause_button = document.getElementById('play_pause_button');
+    playpause_button.classList.toggle("active");
     if (paused == false) {
         Tone.Transport.stop();
         paused = true;

@@ -146,8 +146,8 @@ var paused = true;
 
 function buttonPlay() {
     console.log('play button press');
-    var playpause_button = document.getElementById('play_pause_button');
-    playpause_button.classList.toggle("active");
+    var playpause_button = document.getElementById('play_pause_image');
+    playpause_button.classList.toggle("playing");
     if (paused == false) {
         Tone.Transport.stop();
         paused = true;

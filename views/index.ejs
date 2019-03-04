@@ -117,7 +117,7 @@
                 </div>
                 <span id='wave_label'>Octave:</span>
                 <div class="select">
-                  <select id="octave_<%=i%>" value="4">
+                  <select onchange="updateOctave(this.value,<%=i - 1%>)" id="octave_<%=i%>" value="4">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

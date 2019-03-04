@@ -48,7 +48,6 @@ function makeEuclidSeq(steps, pulses) {
     let y = 0;
     for (let s = 0; s < steps; s++) {
         y = (((s + 1) * pulses) / steps);
-        console.log(y);
         if (y > x) {
             x++;
             seq.push(1);
@@ -74,6 +73,9 @@ function updatePitch(pitch_code, voice_number) {
     notes[voice_number] = pitch_code;
     // set the pitch of a specific voice. input comes from updatePitchWrapper
     // in voice_display.js which connects to the UI.
+}
+function updateOctave(oct_code, voice_number) {
+    notes[voice_number] = notes[voice_number].substring(0, notes[voice_number].length - 1) + String(oct_code);
 }
 
 function updateDisplay() {

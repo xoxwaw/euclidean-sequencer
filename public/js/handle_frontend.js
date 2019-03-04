@@ -7,8 +7,11 @@ Arrange Radial Script
     2 / 4 / 19 : Fix null error
     2 / 12 / 19 : Add connections to backend and populate all function for general
     2 / 12 / 19 : rewrite the functions to clean up code space
+    2 / 15 / 19 : Refactoring + wrapper
+    2 / 20 / 19 : Add label functions
+    3 / 1 / 19 : Move other frontend scripts to be in this file
 */
-console.log("arrange_radial.js loaded");
+console.log("handle_frontend.js loaded");
 
 var dot_template = []; //initialization of all the dots
 

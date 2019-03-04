@@ -1,9 +1,13 @@
 {
-  "name": "project1",
+  "name": "euclidean sequencer",
   "version": "1.0.0",
   "description": "midi euclidian sequencer",
   "engines":{
     "node": "6.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hungphi98/euclidean-sequencer.git"
   },
   "main": "index.js",
   "scripts": {

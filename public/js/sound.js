@@ -1,21 +1,24 @@
-//phi
-//Feb 11
+/*
+Backend javascript for creating and playing sequences using Tone.js
+*/
+
 console.log("sound.js loaded");
 document.documentElement.addEventListener('mousedown', () => {
     if (Tone.context.state !== 'running') Tone.context.resume();
 }); //fix Chrome constraints when you have to trigger to play music
 global.step_val = 1;
 global.num_cycle = 6;
-const synths = [
+
+const synths = [//create an array of synth objects
     new Tone.Synth(),
     new Tone.Synth(),
     new Tone.Synth(),
     new Tone.Synth(),
     new Tone.Synth(),
     new Tone.Synth()
-]; //synth initializtion
+];
 
-let offset_values = [0, 0, 0, 0, 0, 0];
+let offset_values = [0, 0, 0, 0, 0, 0];//an array storing offset values of all voices
 
 const gain = new Tone.Gain(0.5);
 gain.toMaster(); //gain volume
@@ -25,10 +28,16 @@ synths.forEach(synth => synth.connect(gain));
 let wave_type = 'sine';
 tempo = '8n';
 
-synths[0].oscillator.type = wave_type;
+synths[0].oscillator.type = wave_type;//initialize voices
 synths[1].oscillator.type = wave_type;
 synths[2].oscillator.type = wave_type;
 
+
+/*
+Code connecting effect nodes to synth voices.
+Commented out because we never implented UI controls, but decided to leave
+it in for potential future maintanence.
+ 
 var vib = new Tone.Vibrato(6, 0.0).toMaster();
 var dist = new Tone.Distortion(0.0).toMaster();
 var autoFilter = new Tone.AutoFilter(5).toMaster().start();
@@ -37,6 +46,8 @@ for (let s = 0; s < synths.length; s++) {
     synths[s].connect(vib);
     synths[s].connect(autoFilter);
 }
+*/
+
 
 function makeEuclidSeq(steps, pulses) {
     /*
@@ -59,26 +70,27 @@ function makeEuclidSeq(steps, pulses) {
     return seq;
 }
 
-function offset(seq_in, offset) { //return sequence array rotated by offset value
+function offset(seq_in, offset) { 
+	//return sequence array shifted by offset value
     steps = seq_in.length;
     offset = offset % steps; //fix if offset is longer than sequence
     let seq_front = seq_in.slice(0, steps - offset);
     let seq_back = seq_in.slice(steps - offset);
     let seq_out = seq_back.concat(seq_front);
-    //console.log(seq_out);
     return seq_out;
 }
 
 function updatePitch(pitch_code, voice_number) {
+	//update note value of a voice on UI change
     notes[voice_number] = pitch_code;
-    // set the pitch of a specific voice. input comes from updatePitchWrapper
-    // in voice_display.js which connects to the UI.
 }
 function updateOctave(oct_code, voice_number) {
+	//update octave value on UI change
     notes[voice_number] = notes[voice_number].substring(0, notes[voice_number].length - 1) + String(oct_code);
 }
 
 function updateDisplay() {
+	//call display change for each step
     var parent_voice = document.getElementById("controlbtns");
     var children_voice = parent_voice.children;
     document.getElementById("voice_num_value").innerHTML = String(global.num_cycle);
@@ -109,8 +121,6 @@ function removeVoice() {
     }
 }
 
-var cycles = [makeEuclidSeq(1, 1), makeEuclidSeq(1, 1), makeEuclidSeq(1, 1)],
-    notes = ['G5', 'E4', 'C3']; //sample sequencer
 var cycles = [offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1),0),offset(makeEuclidSeq(8,1)),],
     notes = ['C4', 'E4', 'G4','B4','D5','F5'];//load default settings
 let index = 0;
@@ -119,6 +129,7 @@ Tone.Transport.scheduleRepeat(loop, "8n");
 //Tone.Transport.start();
 
 function loop(time) {
+	//play current step, update step
     if (document.getElementById("step_val") != null) {
         global.step_val = document.getElementById("step_val").value;
     }
@@ -137,9 +148,7 @@ function loop(time) {
 }
 
 function updateOffset(voice, offset_val) {
-    /*
-    update the offset (increase/decrease the starting point of a sequence)
-    */
+	//update the offset (increase/decrease the starting point of a sequence)
     offset_values[voice - 1] = parseInt(offset_val);
     pulse_count = document.getElementById("pulse_val_" + voice).value;
     cycles[voice - 1] = offset(makeEuclidSeq(global.step_val, pulse_count), offset_values[voice - 1]);
@@ -151,15 +160,12 @@ function updateTempo(tempo) {
 }
 
 function updateWave(wave, voice) {
-    voice = voice - 1;
-    synths[voice].oscillator.type = wave;
+    synths[voice-1].oscillator.type = wave;
 }
 
 
 function updateSeq() {
-    /*
-    update the pulses, sound, and steps, called from the front end.
-    */
+    //update the pulses, sound, and steps, called from the front end.
     var steps = 1,
         pulse_one = 1,
         pulse_two = 1,
@@ -180,9 +186,7 @@ function updateSeq() {
 
 
 function activeStep(current_step) {
-    /*
-    set the active step(while playing) to dot_active class
-    */
+    //set the active step(while playing) to dot_active class
     voices = [];
     for (var i = 1; i < global.num_cycle + 1; i++) {
         voices.push("circle" + i);

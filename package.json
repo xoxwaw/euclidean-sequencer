@@ -17,6 +17,7 @@
   "author": "phi-nguyen",
   "license": "ISC",
   "dependencies": {
+    "serve-favicon": "^2.5.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "install": "^0.12.2",

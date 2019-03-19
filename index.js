@@ -3,7 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 
 const app = express();
-app.use(favicon(path.join(__dirname,'public','img','icon.ico')));
+app.use(favicon(path.join(__dirname,'public','img','euclid.ico')));
 
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
